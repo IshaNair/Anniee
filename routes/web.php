@@ -83,5 +83,7 @@ Route::prefix('admin/')->group(function () {
 //Front Route//
 
  Route::get('/', [HomeController::class, 'index'])->name('home');
+ Route::get('/about-anniiee', [HomeController::class, 'about_anniiee'])->name('about_anniiee');
+ Route::get('/service', [HomeController::class, 'service'])->name('service');
 
 

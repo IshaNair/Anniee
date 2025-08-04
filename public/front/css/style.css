@@ -125,7 +125,7 @@ p.f14{ font-size: 14px;}
 .about_anniiee_image .anniiee_journey .her_journey p{ font-size: 33px; color: var(--black); line-height: 1;}
 
 .trusted_expertise_boxes{ display: flex; flex-wrap: wrap; gap: 24px;}
-.trusted_expertise_boxes .trusted_expertise_box{  width: calc(25% - 18px); height: 100%; border: 1px solid #5A5A59; border-radius: 42px; background: #131313; padding: 32px; min-height: 250px; gap: 20px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;}
+.trusted_expertise_boxes .trusted_expertise_box{  width: calc(25% - 18px); border: 1px solid #5A5A59; border-radius: 42px; background: #131313; padding: 32px; min-height: 250px; gap: 20px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;}
 .trusted_expertise_boxes .trusted_expertise_box::after{ content: ''; position: absolute; width: 150px; height: 150px; background: #EDA323; filter: blur(127px); right: -53px; bottom: -25px; opacity: 0; transition: all 0.s linear;}
 .trusted_expertise_boxes .trusted_expertise_box:hover::after{ opacity: 1;}
 .trusted_expertise_boxes .trusted_expertise_box:hover .trusted_expertise_number .trusted_expertise_icon{ background-color: var(--yellow);}
@@ -142,8 +142,31 @@ p.f14{ font-size: 14px;}
 .meetAnnieeRow .meetAnnieeText.numerology_text .button{ margin: 0;}
 .meetAnnieeRow .meetAnnieeText.numerology_text{ gap: 20px;}
 
+.global_recognition{ border-radius: 42px; border: 1px solid rgba(255, 255, 255, 0.40); background: rgba(19, 19, 19, 0.70); backdrop-filter: blur(22px); padding: 32px; display: flex; flex-wrap: wrap; gap: 32px; position: relative; overflow: hidden;}
+.global_recognition::after{ content: ''; position: absolute; width: 149px;  height: 149px; background: #EDA323; filter: blur(127px); left: 196px; bottom: -49px;}
+.global_recognition .global_recognition_text{ width: calc(33.33% - 21.33px); }
+.global_recognition .global_recognition_text .global_recognition_Number{ width: 64px; height: 64px; border-radius: 64px; background-color: var(--yellow); display: flex; align-items: center; justify-content: center; margin-bottom: 32px;}
+.global_recognition .global_recognition_text .global_recognition_Number p{ color: var(--black);}
+.global_recognition .global_recognition_text h4{ font-size: 30px; margin-bottom: 16px;}
+.global_recognition .global_recognition_text p{ color: var(--darkGray);}
+
+.gallerySlider img{ aspect-ratio: 3 / 4; object-fit: cover;}
+
+.exclusive_session{ display: flex; align-items: center; flex-wrap: wrap; gap: 30px 90px;}
+.exclusive_session .exclusive_session_content{ width: calc(54% - 45px);}
+.exclusive_session .exclusive_session_img{ width: calc(46% - 45px);}
+
+
 @media (width >= 1300.98px){
     .container{max-width: 1264px;}
+}
+@media (width <= 1200.98px){
+    .about_anniiee_image .anniiee_journey{max-width: 300px;}
+    .about_anniiee_image .anniiee_img img{ width: calc(100% - 150px);}
+    .about_anniiee_image .anniiee_journey .greenBox p{ font-size: 40px;}
+    .about_anniiee_image .anniiee_journey .greenBox, .about_anniiee_image .anniiee_journey .imgbox, .about_anniiee_image .anniiee_journey .her_journey{ border-radius: 18px;}
+    .about_anniiee_image .anniiee_journey .her_journey{ padding: 20px;}
+    .about_anniiee_image .anniiee_journey .her_journey p{ font-size: 25px;}
 }
 @media (width <= 991.98px){
     h1{font-size: 52px;}
@@ -170,9 +193,14 @@ p.f14{ font-size: 14px;}
     body:has(.navigationSection .navbar-toggler[aria-expanded="true"]){ overflow: hidden;}
     .clientSucess::after, .clientSucess::before{display: none;}
 
-    .featuredBlogSection .featuredBlogLeft, .featuredBlogSection .featuredBlogRight{ width: 100%;}
+    .featuredBlogSection .featuredBlogLeft, .featuredBlogSection .featuredBlogRight, .about_anniiee_image, .about_anniiee_Text{ width: 100%;}
     .featuredBlogSection .featuredBlogRight .featuredBlog .featuredBlogImg img{ max-height: unset;}
     .featuredBlogSection .featuredBlog a{ font-size: 16px;}
+    .about_anniiee_image{ max-width: 400px; margin: 0 auto; order: 2;}
+    .about_anniiee_row{ gap: 25px;}
+    .trusted_expertise_boxes .trusted_expertise_box{ width: calc(50% - 12px);}
+    .global_recognition .global_recognition_text h4{ font-size: 22px;}
+    .about_anniiee_Section { padding-top: 140px !important; }
 } 
 
  @media (width <= 767.98px){
@@ -194,9 +222,11 @@ p.f14{ font-size: 14px;}
     .mainTitle .bigTitle { display: none;}
     .footerRow .footerLogoSection, .footerRow .footerLinks{ width: calc(50% - 16px); flex: unset;}
     .footercopyWrite{ flex-direction: column; width: 100%;}
+    .mainTitle{ margin-bottom: 32px;}
  }
   @media (width <= 567.98px){
     .pad80{ padding: 40px 0;}
-
+    .global_recognition .global_recognition_text, .trusted_expertise_boxes .trusted_expertise_box, .about_anniiee_image .anniiee_img img{ width: 100%;}
     .footerRow .footerLogoSection, .subscribeNewsletter, .copyWrite{width: 100%;}
+    .about_anniiee_image .anniiee_journey{ left: 0;}
   }
