@@ -102,13 +102,6 @@ Route::prefix('admin/')->group(function () {
 
 //Front Route//
 
-   Route::get('/', [HomeController::class, 'index'])->name('front.home');
-   Route::get('/front/about-anniiee', [HomeController::class, 'about_anniiee'])->name('front.about-anniiee');
-   Route::get('/front/services', [HomeController::class, 'services'])->name('front.services');
-   Route::get('/front/client-success', [HomeController::class, 'client_success'])->name('front.client-success');
-     Route::get('/front/insights', [HomeController::class, 'insights'])->name('front.insights');
-     Route::get('/front/media', [HomeController::class, 'media'])->name('front.media');
-     Route::get('/front/contact', [HomeController::class, 'contact'])->name('front.contact');
-
+ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
