@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\PageController;
+use App\Http\Controllers\admin\MenuController;
 
 use App\Http\Controllers\HomeController;
 
@@ -68,6 +69,25 @@ Route::prefix('admin/')->group(function () {
       Route::PUT('update-page/{id}', [PageController::class, 'update'])->name('page.update');
       Route::DELETE('delete-page/{id}', [PageController::class, 'destroy'])->name('page.destroy');
 
+      //Menu Route
+
+      Route::get('menus', [MenuController::class, 'index'])->name('menus');
+      Route::get('create-menu', [MenuController::class, 'create'])->name('menu.create');
+      Route::post('store-menu', [MenuController::class, 'store'])->name('menu.store');
+      Route::get('edit-menu/{id}', [MenuController::class, 'edit'])->name('menu.edit');
+      Route::PUT('update-menu/{id}', [MenuController::class, 'update'])->name('menu.update');
+      Route::DELETE('delete-menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
+
+      //poat Route//
+
+
+      Route::get('posts', [PostController::class, 'index'])->name('posts');
+      Route::get('create-post', [PostController::class, 'create'])->name('post.create');
+      Route::post('store-post', [PostController::class, 'store'])->name('post.store');
+      Route::get('edit-post/{id}', [PostController::class, 'edit'])->name('post.edit');
+      Route::PUT('update-post/{id}', [PostController::class, 'update'])->name('post.update');
+      Route::DELETE('delete-post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
      Route::post('/upload-temp-image', [\App\Http\Controllers\admin\TempImagesController::class,'create'])->name('temp-images.create');
 
      //Orders//
@@ -82,6 +102,13 @@ Route::prefix('admin/')->group(function () {
 
 //Front Route//
 
- Route::get('/', [HomeController::class, 'index'])->name('home');
+   Route::get('/', [HomeController::class, 'index'])->name('front.home');
+   Route::get('/front/about-anniiee', [HomeController::class, 'about_anniiee'])->name('front.about-anniiee');
+   Route::get('/front/services', [HomeController::class, 'services'])->name('front.services');
+   Route::get('/front/client-success', [HomeController::class, 'client_success'])->name('front.client-success');
+     Route::get('/front/insights', [HomeController::class, 'insights'])->name('front.insights');
+     Route::get('/front/media', [HomeController::class, 'media'])->name('front.media');
+     Route::get('/front/contact', [HomeController::class, 'contact'])->name('front.contact');
+
 
 

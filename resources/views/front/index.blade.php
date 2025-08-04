@@ -33,10 +33,18 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        @foreach ($menus as $menu)
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Welcome</a>
+                        <a class="nav-link {{ (Route::currentRouteName() == $menu->page_link) ? 'active' : '' }}"
+                            href="{{ route($menu->page_link) }}">
+                            {{ Str::ucfirst($menu->title) }}
+                        </a>
                         </li>
-                        <li class="nav-item">
+
+                        @endforeach
+
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="about-anniiee.html">About Anniiee</a>
                         </li>
                         <li class="nav-item">
@@ -53,7 +61,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -148,6 +156,7 @@
                     </div>
                     <div class="featuredBlogSection">
                         <div class="featuredBlogLeft">
+
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
                                     <img src="{{ asset('front/images/featuredBlog-1.jpg') }}" alt="featuredBlog">
@@ -162,6 +171,7 @@
                                 </div>
                                 <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
+
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
                                     <img src="{{ asset('front/images/featuredBlog-2.jpg') }}" alt="featuredBlog">
@@ -176,6 +186,7 @@
                                 </div>
                                 <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
+
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
                                     <img src="{{ asset('front/images/featuredBlog-3.jpg') }}" alt="featuredBlog">
