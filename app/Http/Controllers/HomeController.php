@@ -33,7 +33,7 @@ class HomeController extends Controller
     public function about_anniiee(){
       return view('front.about_anniiee');
     }
-    public function service(){
+    public function services(){
       return view('front.service');
     }
 }
