@@ -222,7 +222,7 @@
                             </div>
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-6.jpg" alt="featuredBlog">
+                                    <img src="{{ asset('front/images/featuredBlog-6.jpg') }}" alt="featuredBlog">
                                 </div>
                                 <div class="catagories">
                                     <p class="f14"><span><span></span></span>Numerologist</p>
