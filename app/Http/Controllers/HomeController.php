@@ -13,28 +13,22 @@ class HomeController extends Controller
       return view('front.index',['menus'=>$menus]);
     }
 
-    public function about_anniiee(){
 
-    }
-
-    public function services(){
-
-    }
 
     public function client_success(){
-
+      return view('front.about_anniiee');
     }
 
     public function insights(){
-
+     return view('front.about_anniiee');
     }
 
     public function media(){
-
+     return view('front.about_anniiee');
     }
 
     public function contact(){
-
+       return view('front.about_anniiee');
     }
     public function about_anniiee(){
       return view('front.about_anniiee');

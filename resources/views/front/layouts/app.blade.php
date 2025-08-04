@@ -36,10 +36,10 @@
                             <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Welcome</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::is('about_anniiee') ? 'active' : '' }}" href="{{ route('about_anniiee') }}">About Anniiee</a>
+                            <a class="nav-link {{ Route::is('front.about-anniiee') ? 'active' : '' }}" href="{{ route('front.about-anniiee') }}">About Anniiee</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::is('service') ? 'active' : '' }}" href="{{ route('service') }}">Services</a>
+                            <a class="nav-link {{ Route::is('front.services') ? 'active' : '' }}" href="{{ route('front.services') }}">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Client Success</a>
@@ -59,6 +59,7 @@
         </div>
     </nav>
     @yield('content')
+
     <footer class="footerSection consultationsSection pad80">
         <div class="container">
             <div class="footerRow">

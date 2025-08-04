@@ -2,59 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
-<body>
-    <nav class="navbar navbar-expand-lg navigationSection">
-        <div class="container">
-            <div class="navigationContainer">
-                <div class="mobileToggle">
-                    <a class="navbar-brand" href="index.html">Anniiee<span>.</span>com</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        @foreach ($menus as $menu)
-
-                        <li class="nav-item">
-                        <a class="nav-link {{ (Route::currentRouteName() == $menu->page_link) ? 'active' : '' }}"
-                            href="{{ route($menu->page_link) }}">
-                            {{ Str::ucfirst($menu->title) }}
-                        </a>
-                        </li>
-
-                        @endforeach
-
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="about-anniiee.html">About Anniiee</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Client Success</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Insights</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>-->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-=======
->>>>>>> 69d1bef8fbd70da315310134e8b1c4ed614df535
     <div class="homebannerSection">
         <div class="container">
             <div class="row">
@@ -317,9 +264,9 @@
             </div>
         </div>
     </div>
-        
+
 @endsection
 
- 
+
 
 
