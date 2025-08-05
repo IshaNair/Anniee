@@ -32,10 +32,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        @foreach ($menus as $menu)
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Welcome</a>
+                            <a class="nav-link {{ (Route::currentRouteName() == $menu->page_link ) ? 'active' : '' }}" href="{{ route($menu->page_link) }}"> {{ $menu->title }}</a>
                         </li>
-                        <li class="nav-item">
+                         @endforeach
+
+                        <!--<li class="nav-item">
                             <a class="nav-link {{ Route::is('front.about-anniiee') ? 'active' : '' }}" href="{{ route('front.about-anniiee') }}">About Anniiee</a>
                         </li>
                         <li class="nav-item">
@@ -52,7 +55,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>

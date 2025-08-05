@@ -91,109 +91,43 @@
                     </div>
                     <div class="featuredBlogSection">
                         <div class="featuredBlogLeft">
+                           @foreach ($leftposts as $leftpost)
+
 
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-1.jpg') }}" alt="featuredBlog">
+                                    <img src="{{ asset('temp/post/'.$leftpost->image) }}" alt="featuredBlog">
                                 </div>
                                 <div class="catagories">
                                     <p class="f14"><span><span></span></span>Numerologist</p>
                                 </div>
                                 <div class="featuredBlogtext">
-                                    <h4>Engagement Equations</h4>
-                                    <p class="f18">Navigate your engagement journey with emotional and numerical
-                                        clarity—find out if the math of your love adds up.</p>
+                                    <h4>{{ $leftpost->title }}</h4>
+                                    <p class="f18">{{ $leftpost->content }}</p>
                                 </div>
                                 <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
+                          @endforeach
 
-                            <div class="featuredBlog">
-                                <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-2.jpg') }}" alt="featuredBlog">
-                                </div>
-                                <div class="catagories">
-                                    <p class="f14"><span><span></span></span>Numerologist</p>
-                                </div>
-                                <div class="featuredBlogtext">
-                                    <h4>New Connection Code</h4>
-                                    <p class="f18">Decode the numbers behind your next great connection and unlock the
-                                        power of new beginnings in love.</p>
-                                </div>
-                                <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
-
-                            <div class="featuredBlog">
-                                <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-3.jpg') }}" alt="featuredBlog">
-                                </div>
-                                <div class="catagories">
-                                    <p class="f14"><span><span></span></span>Numerologist</p>
-                                </div>
-                                <div class="featuredBlogtext">
-                                    <h4>Together In Harmony</h4>
-                                    <p class="f18">Explore how two paths align as one with a numerological approach to
-                                        creating balance and intimacy.</p>
-                                </div>
-                                <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
                         </div>
+
                         <div class="featuredBlogRight">
+                           @foreach ($righttposts as $righttpost)
                             <div class="featuredBlog">
                                 <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-4.jpg') }}" alt="featuredBlog">
+                                    <img src="{{ asset('temp/post/'.$righttpost->image) }}" alt="featuredBlog">
                                 </div>
                                 <div class="catagories">
                                     <p class="f14"><span><span></span></span>Numerologist</p>
                                 </div>
                                 <div class="featuredBlogtext">
-                                    <h4>Committed Calculations</h4>
-                                    <p class="f18">A guide for long-term lovers using numerology to strengthen bonds and
-                                        calculate the path to lasting commitment.</p>
+                                    <h4>{{ $righttpost->title }}</h4>
+                                    <p class="f18">{{ $righttpost->content }}</p>
                                 </div>
                                 <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
-                            <div class="featuredBlog">
-                                <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-5.jpg') }}" alt="featuredBlog">
-                                </div>
-                                <div class="catagories">
-                                    <p class="f14"><span><span></span></span>Numerologist</p>
-                                </div>
-                                <div class="featuredBlogtext">
-                                    <h4>Lone Wolf’s Path</h4>
-                                    <p class="f18">Discover your unique romantic journey with numerology as your
-                                        guide—perfect for independent souls ready for meaningful love.</p>
-                                </div>
-                                <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="featuredBlog">
-                                <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-6.jpg') }}" alt="featuredBlog">
-                                </div>
-                                <div class="catagories">
-                                    <p class="f14"><span><span></span></span>Numerologist</p>
-                                </div>
-                                <div class="featuredBlogtext">
-                                    <h4>Romantic Beginnings</h4>
-                                    <p class="f18">Start your love story on the right foot with numerology tips designed
-                                        to attract the right partner at the right time.</p>
-                                </div>
-                                <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="featuredBlog">
-                                <div class="featuredBlogImg">
-                                    <img src="{{ asset('front/images/featuredBlog-7.jpg') }}" alt="featuredBlog">
-                                </div>
-                                <div class="catagories">
-                                    <p class="f14"><span><span></span></span>Numerologist</p>
-                                </div>
-                                <div class="featuredBlogtext">
-                                    <h4>From Yes To I Do</h4>
-                                    <p class="f18">A numerology-based roadmap guiding women from engagement to a
-                                        fulfilling lifelong partnership.</p>
-                                </div>
-                                <a href="#">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
+                             @endforeach
+
                         </div>
                     </div>
                 </div>
