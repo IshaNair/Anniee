@@ -45,10 +45,10 @@
                             <a class="nav-link {{ Route::is('front.services') ? 'active' : '' }}" href="{{ route('front.services') }}">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Client Success</a>
+                            <a class="nav-link {{ Route::is('front.client-success') ? 'active' : '' }}" href="{{ route('front.client-success') }}">Client Success</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Insights</a>
+                            <a class="nav-link {{ Route::is('front.insights') ? 'active' : '' }}" href="{{ route('front.insights') }}">Insights</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Media</a>
