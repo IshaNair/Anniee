@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AuthenticateController;
+
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CategoryController;
 
@@ -12,9 +13,38 @@ use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\admin\PostController;
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\CustomerController;
 
+//support Controller//
+
+use App\Http\Controllers\support\AuthenticateController as SupportAuthenticateController;
+use App\Http\Controllers\support\DashboardController as SupportDashboardController;
+
+
+//Frotend Controller//
 use App\Http\Controllers\HomeController;
 
+
+//Support Route//
+
+
+Route::prefix('support/')->group(function () {
+    Route::group(['middleware'=>'support.guest'],function () {
+      Route::get('login', [SupportAuthenticateController::class, 'index'])->name('support.login');
+      Route::post('authenticate', [SupportAuthenticateController::class, 'authentication'])->name('support.authenticate');
+    });
+
+    Route::middleware('support.auth')->group(function () {
+      Route::get('dashboard', [SupportDashboardController::class, 'index'])->name('support.dashboard');
+      Route::get('logout', [SupportAuthenticateController::class, 'logout'])->name('support.logout');
+
+    });
+
+ });
+
+
+//Admin Route//
 
 Route::prefix('admin/')->group(function () {
     Route::group(['middleware'=>'admin.guest'],function () {
@@ -23,7 +53,8 @@ Route::prefix('admin/')->group(function () {
     });
 
     Route::middleware('admin.auth')->group(function () {
-      Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
 
       //category//
 
@@ -81,7 +112,6 @@ Route::prefix('admin/')->group(function () {
 
       //post Route//
 
-
       Route::get('posts', [PostController::class, 'index'])->name('post.list');
       Route::get('create-post', [PostController::class, 'create'])->name('post.create');
       Route::post('store-post', [PostController::class, 'store'])->name('post.store');
@@ -89,8 +119,28 @@ Route::prefix('admin/')->group(function () {
       Route::PUT('update-post/{id}', [PostController::class, 'update'])->name('post.update');
       Route::post('delete-post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 
+      //User Route//
+
+      Route::get('users', [UserController::class, 'index'])->name('user.list');
+       Route::get('users-permition', [UserController::class, 'users_permition'])->name('user.permition');
+      Route::get('create-user', [UserController::class, 'create'])->name('create.user');
+      Route::post('store-user', [UserController::class, 'store'])->name('user.store');
+      Route::get('edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+      Route::PUT('update-user/{id}', [UserController::class, 'update'])->name('user.update');
+      Route::post('delete-user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+      // Customer Route //
+
+      Route::get('customer', [CustomerController::class, 'index'])->name('customer.list');
+      Route::get('create-customer', [CustomerController::class, 'create'])->name('customer.create');
+      Route::post('store-customer', [CustomerController::class, 'store'])->name('customer.store');
+      Route::get('edit-customer/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+      Route::PUT('update-customer/{id}', [CustomerController::class, 'update'])->name('customer.update');
+      Route::DELETE('delete-customer/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+
      Route::post('/upload-temp-image', [\App\Http\Controllers\admin\TempImagesController::class,'create'])->name('temp-images.create');
      Route::post('/upload-post-temp-image', [\App\Http\Controllers\admin\TempImagesController::class,'create_post_image'])->name('temp.post.images.create');
+
      //Orders//
      Route::get('orders', [OrderController::class, 'index'])->name('orders');
 

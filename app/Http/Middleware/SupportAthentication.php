@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
-
-class AuthRedirect
+class SupportAthentication
 {
     /**
      * Handle an incoming request.
@@ -17,12 +16,10 @@ class AuthRedirect
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard('admin')->check()){
-            return redirect()->route('admin.dashboard');
+        if(!Auth::guard('support')->check()){
+            return redirect()->route('support.login');
 
         }
-
-
         return $next($request);
     }
 }

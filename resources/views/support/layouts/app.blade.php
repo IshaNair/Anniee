@@ -16,7 +16,6 @@
 
         <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/plugins/dropzone/dropzone.css') }}">
-
 	</head>
 	<body class="hold-transition sidebar-mini">
 		<!-- Site wrapper -->
@@ -43,11 +42,11 @@
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link p-0 pr-3" data-toggle="dropdown" href="#">
-							<img src="{{ asset('admin/img/avatar5.png') }}" class='img-circle elevation-2' width="40" height="40" alt="">
+							<img src="{{asset('admin/img/avatar5.png') }}" class='img-circle elevation-2' width="40" height="40" alt="">
 						</a>
 						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-3">
-							<h4 class="h4 mb-0"><strong>{{ Auth::guard('admin')->user()->name }}</strong></h4>
-							<div class="mb-3">{{ Auth::guard('admin')->user()->email }}</div>
+							<h4 class="h4 mb-0"><strong>{{ Auth::guard('support')->user()->name }}</strong></h4>
+							<div class="mb-3">{{ Auth::guard('support')->user()->email }}</div>
 							<div class="dropdown-divider"></div>
 							<a href="#" class="dropdown-item">
 								<i class="fas fa-user-cog mr-2"></i> Settings
@@ -57,7 +56,7 @@
 								<i class="fas fa-lock mr-2"></i> Change Password
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="{{ route('admin.logout') }}" class="dropdown-item text-danger">
+							<a href="{{ route('support.logout') }}" class="dropdown-item text-danger">
 								<i class="fas fa-sign-out-alt mr-2"></i> Logout
 							</a>
 						</div>
@@ -76,7 +75,7 @@
 				<div class="sidebar">
 					<!-- Sidebar user (optional) -->
 
-                    @include('admin.layouts.sidebar')
+                    @include('support.layouts.sidebar')
 					<!-- /.sidebar-menu -->
 				</div>
 				<!-- /.sidebar -->

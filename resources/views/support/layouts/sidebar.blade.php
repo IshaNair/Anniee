@@ -10,33 +10,12 @@
 									<p>Dashboard</p>
 								</a>
 							</li>
-                            <li class="nav-item">
-								<a href="{{ route('user.list') }}" class="nav-link">
-									<i class="nav-icon  fas fa-users"></i>
-									<p>Users</p>
-								</a>
-							</li>
-                            <li class="nav-item">
-								<a href="{{ route('user.permition') }}" class="nav-link">
-									<i class="nav-icon  fas fa-users"></i>
-									<p>User Permition</p>
-								</a>
-							</li>
-
-
-                            <li class="nav-item">
-								<a href="{{ route('customer.list') }}" class="nav-link">
-									<i class="nav-icon  fas fa-users"></i>
-									<p>Customer</p>
-								</a>
-							</li>
-
 							<!--<li class="nav-item">
 								<a href="{{ route('categories') }}" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Category</p>
 								</a>
-							</li>-->
+							</li> -->
 
 							<!--<li class="nav-item">
 								<a href="{{ route('subcategory') }}" class="nav-link">
@@ -69,12 +48,13 @@
 								</a>
 							</li>-->
 
-                             <li class="nav-item">
+                            <!-- <li class="nav-item">
 								<a href="{{ route('menus') }}" class="nav-link">
 									<i class="nav-icon fas fa-shopping-bag"></i>
 									<p>Top Menu</p>
 								</a>
-							</li>
+							</li>-->
+
 							<li class="nav-item">
 								<a href="{{ route('post.list') }}" class="nav-link">
 									<i class="nav-icon fas fa-shopping-bag"></i>
@@ -88,6 +68,18 @@
 								</a>
 							</li>-->
 
+							<li class="nav-item">
+								<a href="{{ route('user.list') }}" class="nav-link">
+									<i class="nav-icon  fas fa-users"></i>
+									<p>Users</p>
+								</a>
+							</li>
+                            <li class="nav-item">
+								<a href="{{ route('user.permition') }}" class="nav-link">
+									<i class="nav-icon  fas fa-users"></i>
+									<p>User Permition</p>
+								</a>
+							</li>
 
                             <li class="nav-item">
 								<a href="{{ route('orders') }}" class="nav-link">

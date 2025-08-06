@@ -15,11 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
          $middleware->alias([
                     'admin.guest' => \App\Http\Middleware\AuthRedirect::class,
                     'admin.auth'  => \App\Http\Middleware\Authentication::class,
+                    'support.guest' => \App\Http\Middleware\SupportRedirection::class,
+                    'support.auth'  => \App\Http\Middleware\SupportAthentication::class,
                 ]);
 
+
          $middleware->redirectTo(
-             guests:'/shop/login',
-             users:'/shop/dashboard',
+             guests:'/home/login',
+             users:'/home/dashboard',
          );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
