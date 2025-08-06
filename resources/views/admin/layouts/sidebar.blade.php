@@ -51,9 +51,9 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="{{ route('orders') }}" class="nav-link">
+								<a href="{{ route('post.list') }}" class="nav-link">
 									<i class="nav-icon fas fa-shopping-bag"></i>
-									<p>Orders</p>
+									<p>Post</p>
 								</a>
 							</li>
 							<!--<li class="nav-item">

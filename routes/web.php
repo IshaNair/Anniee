@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\MenuController;
+use App\Http\Controllers\admin\PostController;
 
 use App\Http\Controllers\HomeController;
 
@@ -78,18 +79,18 @@ Route::prefix('admin/')->group(function () {
       Route::PUT('update-menu/{id}', [MenuController::class, 'update'])->name('menu.update');
       Route::DELETE('delete-menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
-      //poat Route//
+      //post Route//
 
 
-      Route::get('posts', [PostController::class, 'index'])->name('posts');
+      Route::get('posts', [PostController::class, 'index'])->name('post.list');
       Route::get('create-post', [PostController::class, 'create'])->name('post.create');
       Route::post('store-post', [PostController::class, 'store'])->name('post.store');
       Route::get('edit-post/{id}', [PostController::class, 'edit'])->name('post.edit');
       Route::PUT('update-post/{id}', [PostController::class, 'update'])->name('post.update');
-      Route::DELETE('delete-post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+      Route::post('delete-post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 
      Route::post('/upload-temp-image', [\App\Http\Controllers\admin\TempImagesController::class,'create'])->name('temp-images.create');
-
+     Route::post('/upload-post-temp-image', [\App\Http\Controllers\admin\TempImagesController::class,'create_post_image'])->name('temp.post.images.create');
      //Orders//
      Route::get('orders', [OrderController::class, 'index'])->name('orders');
 
