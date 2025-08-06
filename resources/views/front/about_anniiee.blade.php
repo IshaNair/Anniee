@@ -32,7 +32,7 @@
                 </div>
                 <div class="about_anniiee_content">
                     <p class="f16">Anniiee’s inner calling sparked a global wave of karmic healing. Guided by intuition and soul purpose, her journey now inspires others to find clarity, alignment, and inner healing.</p>
-                    <a href="#" class="button">Learn More <span><img src="{{ asset('front/images/arrowBtn.svg')}}" alt="arrowBtn"></span></a>
+                    <a href="#" class="button"><span>Learn More</span></a>
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                         <li>Personalized SoulPrint sessions — not one-size-fits-all</li>
                         <li>Designed to guide, realign, and awaken your true path</li>
                     </ul>
-                    <a href="#" class="button">View All <span><img src="{{ asset('front/images/arrowBtn.svg')}}" alt="arrowBtn"></span></a>
+                    <a href="#" class="button"><span>View All</span></a>
                 </div>
             </div>
             <div class="meetAnnieeImg">

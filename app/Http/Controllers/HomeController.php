@@ -16,11 +16,11 @@ class HomeController extends Controller
 
 
     public function client_success(){
-      return view('front.about_anniiee');
+      return view('front.client_success');
     }
 
     public function insights(){
-     return view('front.about_anniiee');
+     return view('front.insights');
     }
 
     public function media(){

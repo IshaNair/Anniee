@@ -11,7 +11,7 @@
                         <h1>Experience Elite Guidance for Your Soul’s Journey.</h1>
                         <p class="bannerPhara">A concise statement reinforcing the premium nature and target audience.
                         </p>
-                        <a href="#" class="button">Book Your Elite Consultation <span><img src="{{ asset('front/images/arrowBtn.svg') }}"  alt="arrowBtn"></span></a>
+                        <a href="#" class="button"><span>Book Your Elite Consultation </span></a>
                     </div>
                 </div>
             </div>
