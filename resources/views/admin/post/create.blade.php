@@ -3,86 +3,55 @@
 @section('content')
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
-					<div class="container-fluid my-2">
-						<div class="row mb-2">
-							<div class="col-sm-6">
-								<h1>Create Post</h1>
-							</div>
-							<div class="col-sm-6 text-right">
-								<a href="{{ route('post.list') }}" class="btn btn-primary">Back</a>
-							</div>
-						</div>
-					</div>
-					<!-- /.container-fluid -->
+					<h1>Create Post</h1>
 				</section>
 				<!-- Main content -->
-				<section class="content">
+				<section class="containerBox">
 					<!-- Default box -->
-					<div class="container-fluid">
-                        <form method="POST" action="{{ route('post.store') }}">
+					<div class="containerBg">
+                        <form method="POST" action="{{ route('post.store') }}" class="formContainer">
                         @csrf
-						<div class="card">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="title">Title</label>
-											<input type="text" onchange="getslug();" name="title" id="title" value="{{ old('title') }}" class="form-control @error('title') is-invalid @enderror" placeholder="Title">
-                                            @error('title')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="email">Slug</label>
-											<input type="text" name="slug" id="slug" class="form-control" placeholder="Slug" readonly>
-                                            @error('slug')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-										</div>
-									</div>
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="content">Content</label>
-                                            <textarea name="content" id="content" class="summernote" cols="30" rows="10">{{ old('content') }}</textarea>
-                                             @error('content')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
+                        <div class="inputBox">
+                            <label for="title">Title</label>
+                            <input type="text" onchange="getslug();" name="title" id="title" value="{{ old('title') }}" class=" @error('title') is-invalid @enderror" placeholder="Title">
+                            @error('title')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="inputBox">
+                            <label for="email">Slug</label>
+                            <input type="text" name="slug" id="slug" class="" placeholder="Slug" readonly>
+                            @error('slug')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="inputBox">
+                            <label for="content">Content</label>
+                            <textarea name="content" id="content" class="summernote" cols="30" rows="10">{{ old('content') }}</textarea>
+                                @error('content')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                                    <div class="col-md-3">
-                                        <div class="mb-3">
-                                            <label for="status">Status</label>
-                                            <select name="status" id="status" class="form-control">
-                                               <option value="0">Block</option>
-                                               <option value="1">Active</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                        <div class="inputBox">
+                            <label for="status">Status</label>
+                            <select name="status" id="status" class="">
+                                <option value="0">Block</option>
+                                <option value="1">Active</option>
+                            </select>
+                        </div>
 
-                                   <div class="card mb-3">
-                                    <div class="mb-3">
-                                    <label for="image">Image</label>
-                                        <div id="image" class="dropzone dz-clickable">
-                                            <div class="dz-message needsclick">
-                                                <br>Drop files here or click to upload.<br><br>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="inputBox">
+                            <label for="image">Image</label>
+                            <div id="image" class="dropzone dz-clickable">
+                                <div class="dz-message needsclick">
+                                    <br>Drop files here or click to upload.<br><br>
                                 </div>
-
-                              <div class="card mb-3" id="product-gallery">
-
-
-
-								</div>
-							</div>
-						</div>
-						<div class="pb-5 pt-3">
-							<button class="btn btn-primary">Create</button>
-							<a href="#" class="btn btn-outline-dark ml-3">Cancel</a>
+                            </div>
+                        </div>
+						<div class="fromBtnSection">
+							<button class="button">Create</button>
+							<a href="{{ route('post.list') }}" class="button outline">Cancel</a>
 						</div>
                     </form>
 					</div>

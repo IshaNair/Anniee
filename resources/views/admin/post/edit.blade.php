@@ -3,92 +3,59 @@
 @section('content')
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
-					<div class="container-fluid my-2">
-						<div class="row mb-2">
-							<div class="col-sm-6">
-								<h1>Update Post</h1>
-							</div>
-							<div class="col-sm-6 text-right">
-								<a href="{{ route('post.list') }}" class="btn btn-primary">Back</a>
-							</div>
-						</div>
-					</div>
-					<!-- /.container-fluid -->
+					<h1>Update Post</h1>
 				</section>
 				<!-- Main content -->
-				<section class="content">
+				<section class="containerBox">
 					<!-- Default box -->
-					<div class="container-fluid">
-                        <form method="POST" action="{{ route('post.update',$post->id) }}">
+					<div class="containerBg">
+                        <form method="POST" action="{{ route('post.update',$post->id) }}" class="formContainer">
                         @csrf
                         @method('PUT')
-						<div class="card">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="title">Title</label>
-											<input type="text" onchange="getslug();" name="title" id="title" value="{{ old('title',$post->title) }}" class="form-control @error('title') is-invalid @enderror" placeholder="Title">
-                                            @error('title')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="email">Slug</label>
-											<input type="text" name="slug" id="slug" class="form-control" value="{{ $post->slug }}" placeholder="Slug" readonly>
-                                            @error('slug')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-										</div>
-									</div>
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="content">Content</label>
-                                            <textarea name="content" id="content" class="summernote" cols="30" rows="10">{{ old('content', $post->content) }}</textarea>
-                                             @error('content')
-                                             <p class="invalid-feedback">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
+						<div class="inputBox">
+                            <label for="title">Title</label>
+                            <input type="text" onchange="getslug();" name="title" id="title" value="{{ old('title',$post->title) }}" class="form-control @error('title') is-invalid @enderror" placeholder="Title">
+                            @error('title')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="inputBox">
+                            <label for="email">Slug</label>
+                            <input type="text" name="slug" id="slug" class="form-control" value="{{ $post->slug }}" placeholder="Slug" readonly>
+                            @error('slug')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="inputBox">
+                            <label for="content">Content</label>
+                            <textarea name="content" id="content" class="summernote" cols="30" rows="10">{{ old('content', $post->content) }}</textarea>
+                                @error('content')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="inputBox">
+                            <label for="status">Status</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="0" {{ ($post->status==0)? 'selected':''}}>Block</option>
+                                <option value="1" {{ ($post->status==1)? 'selected':''}}>Active</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <img src="{{ asset('temp/post/'.$post->image) }}" width="150" height="150">
+                            <input type="hidden" name="old_image" value="{{$post->image }}">
 
-                                    <div class="col-md-3">
-                                        <div class="mb-3">
-                                            <label for="status">Status</label>
-                                            <select name="status" id="status" class="form-control">
-                                               <option value="0" {{ ($post->status==0)? 'selected':''}}>Block</option>
-                                               <option value="1" {{ ($post->status==1)? 'selected':''}}>Active</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <div class="mb-3">
-                                            <img src="{{ asset('temp/post/'.$post->image) }}" width="150" height="150">
-                                            <input type="hidden" name="old_image" value="{{$post->image }}">
-
-                                        </div>
-                                    </div>
-
-                                   <div class="col-md-3">
-                                    <div class="mb-3">
-                                    <label for="image">Image</label>
-                                        <div id="image" class="dropzone dz-clickable">
-                                            <div class="dz-message needsclick">
-                                                <br>Drop files here or click to upload.<br><br>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="image">Image</label>
+                            <div id="image" class="dropzone dz-clickable">
+                                <div class="dz-message needsclick">
+                                    <br>Drop files here or click to upload.<br><br>
                                 </div>
-                              <div class="col-md-3" id="product-gallery">
-
-							</div>
-							</div>
-						</div>
-						<div class="pb-5 pt-3">
-							<button class="btn btn-primary">Update</button>
-							<a href="#" class="btn btn-outline-dark ml-3">Cancel</a>
+                            </div>
+                        </div>
+						<div class="fromBtnSection">
+							<button class="button">Update</button>
+							<a href="{{ route('post.list') }}" class="button outline">Cancel</a>
 						</div>
                     </form>
 					</div>

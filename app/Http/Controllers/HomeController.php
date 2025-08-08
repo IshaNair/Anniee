@@ -26,19 +26,23 @@ class HomeController extends Controller
 
 
     public function client_success(){
-      return view('front.client_success');
+      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+      return view('front.client_success',['menus'=>$menus]);
     }
 
     public function insights(){
-     return view('front.insights');
+      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+     return view('front.insights',['menus'=>$menus]);
     }
 
     public function media(){
-     return view('front.media');
+      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+     return view('front.media',['menus'=>$menus]);
     }
 
     public function contact(){
-       return view('front.contact');
+      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+       return view('front.contact',['menus'=>$menus]);
     }
     public function about_anniiee(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
@@ -46,7 +50,7 @@ class HomeController extends Controller
     }
     public function services(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-      return view('front.service',['menus'=>$menus]);
+        return view('front.service',['menus'=>$menus]);
     }
 
 
