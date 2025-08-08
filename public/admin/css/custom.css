@@ -21,3 +21,103 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
+body{font-family: "Sora", sans-serif; overflow-x: hidden;}
+.brand-link{ font-size: 20px; font-style: normal; font-weight: 700; line-height: normal; padding: 16px 30px ; min-height: 88px; display: flex; align-items: center;  border-bottom: 1px solid #1F1F24 !important;} 
+.brand-link span{ color: #EDA323;}
+.main-header{ min-height: 88px; border-color: #1F1F24;  background: #0F0F12; border-left: 1px solid #1F1F24; position: sticky; top: 0;}
+.main-sidebar{ border-color: #1F1F24;  background: #0F0F12; border-right: 1px solid #1F1F24; box-shadow: none !important; position: fixed !important; width: 260px;}
+.content-wrapper{ background-color: #151518;}
+.navbar-light .navbar-nav .nav-link{color: #fff !important;}
+.sidebar{ padding: 0; height: calc(100vh - 88px); overflow: auto;}
+.sidebar_navigation{ padding: 24px;}
+.sidebar_navigation .nav-sidebar .nav-item{ width: 100% !important;}
+.sidebar_navigation .nav-sidebar .nav-item + .nav-item{ margin-top: 12px;}
+.sidebar_navigation .nav-sidebar .nav-item .nav-link{ width: 100% !important; border: 1px solid #222225; border-radius: 36px; padding: 16px 20px; margin: 0; color: #A0AEC0 !important; display: flex; align-items: center; gap: 8px; min-height: 58px; font-size: 16px;}
+.sidebar_navigation .nav-sidebar .nav-item .nav-link p{ line-height: 1;}
+.sidebar_navigation .nav-sidebar .nav-item .nav-link svg{ width: 24px; height: 24px; min-width: 24px;}
+.sidebar_navigation .nav-sidebar .nav-item .nav-link.active{ color: #fff !important; background: #EDA323;}
+.sidebar_navigation .topnavigation{ margin-bottom: 80px;}
+
+.content-header{ padding: 20px 32px;}
+.content-header h1{ font-size: 24px; color: #fff;}
+.containerBox{ padding: 32px; padding-top: 0; }
+.containerBox .containerBg{border-radius: 24px;  background: #0F0F12; padding: 24px; }
+
+.small-box.card{ background-color: #151518; color: #fff; padding: 24px; padding-bottom: 0; border-radius: 20px; overflow: hidden;}
+.small-box.card .small-box-footer{ padding:12px 24px; margin: 0 -24px; background-color: #EDA323; color: #0F0F12;}
+
+.tableContainer.table thead th{ color: #A0AEC0; border: none;}
+.tableContainer.table td, .tableContainer.table th{ border: none; height: 84px; vertical-align: middle;}
+.tableContainer.table td{border-top: 1px solid #1C1C1F; color: #fff; font-size: 14px;}
+
+.actionBtn .btn{ height: 40px; width: 40px; background-color: #DC2929;; border-radius: 30px; display: flex; align-items: center; justify-content: center; color: #fff;}
+.actionBtn .btn.edit{ background-color: #005cbf;}
+.actionBtn{ display: flex; align-items: center; gap: 10px;}
+
+.searchInput{ position: relative; width: 100%; max-width: 360px;}
+.searchInput input { border-radius: 48px;  border: 1px solid #2D2D30;  background: #1C1C1F; color: #fff; padding: 14px 20px; width: 100%; max-width: 360px; padding-right: 50px;}
+.searchInput .searchbtn{  height: 100%; width: 40px; position: absolute; right: 0; top: 0; bottom: 0; margin: auto; background-color: transparent; border: none;  padding: 30px; display: flex; align-items: center; justify-content: center; color: #fff;}
+
+.card-header{ display: flex; align-items: center; justify-content: space-between; padding: 0; margin-bottom: 20px; border: none; gap: 20px;}
+.card-header::after{ display: none;}
+
+.button{ border-radius: 12px;  border: 1px solid #2D2D30; background: #EDA323; padding:12px 20px; display: flex; align-items: center; gap: 8px; color: #fff; transition: all 0.5s linear;}
+.button:hover{ color: #fff; background-color: #b47200;}
+.card-btn{ display: flex; align-items: center; gap: 12px;}
+.filterBtn{display: flex; width: 48px; height: 48px; padding: 12px; justify-content: center; align-items: center; border-radius: 52px; border: 1px solid #2D2D30; background: #1C1C1F;}
+
+.button.outline{ border: 1px solid #2D2D30; background: #1C1C1F; }
+
+.formContainer{ display: flex; flex-wrap: wrap; gap: 30px;}
+.formContainer .inputBox{ width: calc(50% - 15px); display: flex; flex-direction: column; gap: 5px;}
+.formContainer .inputBox label{ margin: 0; padding: 0; font-size: 16px; color: #FFF; font-weight: 400;}
+.formContainer .inputBox input, .formContainer .inputBox select, .formContainer .inputBox textarea{ padding: 14px 20px; border-radius: 48px;  border: 1px solid #2D2D30; background: #1C1C1F;  color: #fff; appearance: none;}
+.formContainer .inputBox select{ padding-right: 40px; background: url(../img/downArrow.svg)no-repeat, linear-gradient(0deg, #1C1C1F); background-size: 12px; background-position: center right 20px; background-color: #1C1C1F; }
+.formContainer .fromBtnSection{ width: 100%; margin-top: 24px; display: flex; align-items: center; gap: 12px; justify-content: flex-end;}
+
+.profilDropdown .nav-link{ border-radius: 1000px;  border: 1px solid #2D2D30; background: #1C1C1F; padding: 8px 12px; display: flex; width: fit-content; gap: 6px; }
+.profilDropdown .nav-link .profileimg{ border-radius: 50px;}
+
+.dropdown-menu-right{ background-color: #151518; border: 1px solid #2D2D30; border-radius: 24px; color: #fff;}
+.dropdown-menu-right .dropdown-item{color: #fff;}
+.dropdown-menu-right .dropdown-item:hover{ background-color: #0F0F12;}
+.dropdown-menu-right .dropdown-divider{ border-color: #2D2D30;}
+
+.pagination .page-item .page-link{background-color: transparent; border-radius: 36px;  border: 1px solid transparent;  background: transparent; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff;}
+.pagination .page-item.active .page-link {background: #1C1C1F; border-color: #363E4F;}
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+        margin-left: 115px !important;
+    }
+    .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before{ width: 115px;}
+  
+} 
+
+@media (min-width: 991.98px) {
+    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 260px;
+    }
+    .sidebar-collapse .main-sidebar, .sidebar-collapse .main-sidebar::before{     margin-left: -260px;}
+}
+
+
+
+@media(width <= 767.98px) {
+  .card-header{ flex-direction: column-reverse;}
+  .card-btn{ width: 100%; justify-content: space-between;}
+  .searchInput{ margin-right: auto;}
+}
+@media(width <= 575.98px) {
+  .containerBox { padding: 0;}
+  .containerBox .containerBg{ margin: 0; background-color: transparent; border-radius: 0; padding-top: 0;}
+  .content-header{ padding: 20px 24px ;}
+  .formContainer .inputBox{ width: 100%;}
+    .pagination .page-item .page-link{ width: unset; height: unset;background: #1C1C1F; border-color: #363E4F; }
+    .pagination{ gap: 20px;}
+
+}
