@@ -10,4 +10,11 @@ class DashboardController extends Controller
     public function index(){
        return view('support.dashboard');
     }
+
+     public function booking(){
+
+     }
+     public function orders(){
+
+     }
 }

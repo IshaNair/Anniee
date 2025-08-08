@@ -48,36 +48,36 @@
                         <p class="f18">“their team are easy to work with and helped me make amazing website in a short amount of time. thanks guys for all your hand work.”</p>
                         <div class="user_name">
                             <img src="{{asset('front/images/user-1.png')}}" alt="user">
-                            Mathhew miller 
+                            Mathhew miller
                         </div>
-                    </div>   
+                    </div>
                 </div>
-                <div>                 
+                <div>
                     <div class="premium_experience_slider_box">
                         <p class="f18">“their team are easy to work with and helped me make amazing website in a short amount of time. thanks guys for all your hand work.”</p>
                         <div class="user_name">
                             <img src="{{asset('front/images/user-1.png')}}" alt="user">
-                            Mathhew miller 
+                            Mathhew miller
                         </div>
-                    </div>     
+                    </div>
                 </div>
-                <div>               
+                <div>
                     <div class="premium_experience_slider_box">
                         <p class="f18">“their team are easy to work with and helped me make amazing website in a short amount of time. thanks guys for all your hand work.”</p>
                         <div class="user_name">
                             <img src="{{asset('front/images/user-1.png')}}" alt="user">
-                            Mathhew miller 
+                            Mathhew miller
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                <div>                   
+                <div>
                     <div class="premium_experience_slider_box">
                         <p class="f18">“their team are easy to work with and helped me make amazing website in a short amount of time. thanks guys for all your hand work.”</p>
                         <div class="user_name">
                             <img src="{{asset('front/images/user-1.png')}}" alt="user">
-                            Mathhew miller 
+                            Mathhew miller
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,30 +147,53 @@
                     <h2>Book Sessions</h2>
                 </div>
             </div>
-            <form action="" class="book_sessions_form">
+            <form action="{{ route('book.service') }}" method="POST" class="book_sessions_form">
+                @csrf
                 <div class="inputbox">
                     <label for="fullname">Full name *</label>
-                    <input type="text" id="fullname" placeholder="Enter full name">
+                    <input type="text" id="fullname" name="name" value="{{ old('phone') }}" class="@error('name') is-invalid @enderror" placeholder="Enter full name">
+                   @error('name')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="inputbox">
+                    <label for="phone">Phone *</label>
+                    <input type="number" id="phone" name="phone" value="{{ old('phone') }}" class="@error('phone') is-invalid @enderror" placeholder="Phone number" >
+                     @error('phone')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="inputbox w50">
                     <label for="email">Your Email *</label>
-                    <input type="email" id="email" placeholder="enter email">
+                    <input type="email" id="email" name="email" value="{{ old('email')}}" class="@error('email') is-invalid @enderror" placeholder="enter email">
+                     @error('email')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="inputbox w50">
                     <label for="confirmationEmail">Confirmation email</label>
-                    <input type="email" id="confirmationEmail" placeholder="enter email">
+                    <input type="email" id="confirmationEmail" name="email_confirmation" value="{{ old('email_confirmation')}}" class="@error('email_confirmation') is-invalid @enderror" placeholder="enter email">
+                    @error('email_confirmation')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="inputbox w50">
                     <label for="sessionDate">Preferred session date</label>
-                    <input type="date" id="sessionDate" placeholder="enter date & time">
+                    <input type="date" id="sessionDate" name="session_date" value="{{ old('session_date')}}" class="@error('session_date') is-invalid @enderror" placeholder="enter date & time">
+                    @error('session_date')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="inputbox w50">
                     <label for="sessionTime">Preferred session time</label>
-                    <input type="time" id="sessionTime" placeholder="enter your time">
+                    <input type="text" id="sessionTime" name="session_time" value="{{ old('session_time')}}" class="@error('session_time') is-invalid @enderror" placeholder="h:mm AM/PM">
+                     @error('session_time')
+                        <p class="invalid-feedback">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="inputbox">
                     <div class="radiobtn">
-                        <input type="radio" id="agreePrivacy">
+                        <input type="radio" id="agreePrivacy" name="privacy_policy" value="{{ old('privacy_policy','yes')}}">
                         <label for="agreePrivacy"><span></span> I agree to the privacy policy</label>
                     </div>
                 </div>
@@ -180,4 +203,22 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('customJS')
+<link rel="stylesheet" href="jquery-ui.css">
+<link rel="stylesheet" href="jquery-ui-timepicker-addon.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="jquery-ui-timepicker-addon.js"></script>
+
+<input type="text" id="datetime">
+
+<script>
+  $('#datetime').datetimepicker({
+    timeFormat: 'hh:mm tt',
+    stepHour: 1,
+    stepMinute: 15
+  });
+</script>
 @endsection

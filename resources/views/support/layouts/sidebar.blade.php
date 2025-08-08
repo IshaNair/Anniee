@@ -5,7 +5,7 @@
 							<!-- Add icons to the links using the .nav-icon class
 								with font-awesome or any other icon font library -->
 							<li class="nav-item">
-								<a href="{{ route('admin.dashboard') }}" class="nav-link">
+								<a href="{{ route('support.dashboard') }}" class="nav-link">
 									<i class="nav-icon fas fa-tachometer-alt"></i>
 									<p>Dashboard</p>
 								</a>
@@ -55,12 +55,13 @@
 								</a>
 							</li>-->
 
-							<li class="nav-item">
+							<!--<li class="nav-item">
 								<a href="{{ route('post.list') }}" class="nav-link">
 									<i class="nav-icon fas fa-shopping-bag"></i>
 									<p>Post</p>
 								</a>
-							</li>
+							</li>-->
+
 							<!--<li class="nav-item">
 								<a href="discount.html" class="nav-link">
 									<i class="nav-icon  fa fa-percent" aria-hidden="true"></i>
@@ -69,29 +70,25 @@
 							</li>-->
 
 							<li class="nav-item">
-								<a href="{{ route('user.list') }}" class="nav-link">
+								<a href="{{ route('list.customer') }}" class="nav-link">
 									<i class="nav-icon  fas fa-users"></i>
-									<p>Users</p>
+									<p>Customer</p>
 								</a>
 							</li>
-                            <li class="nav-item">
-								<a href="{{ route('user.permition') }}" class="nav-link">
+
+                              <li class="nav-item">
+								<a href="#" class="nav-link">
 									<i class="nav-icon  fas fa-users"></i>
-									<p>User Permition</p>
+									<p>Bookings</p>
 								</a>
 							</li>
 
                             <li class="nav-item">
-								<a href="{{ route('orders') }}" class="nav-link">
+								<a href="#" class="nav-link">
 									<i class="nav-icon  fa-first-order"></i>
 									<p>Orders</p>
 								</a>
 							</li>
-							<li class="nav-item">
-								<a href="{{ route('pages') }}" class="nav-link">
-									<i class="nav-icon  far fa-file-alt"></i>
-									<p>Pages</p>
-								</a>
-							</li>
+
 						</ul>
 					</nav>

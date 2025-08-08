@@ -16,11 +16,12 @@ use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\CustomerController;
 
+
 //support Controller//
 
 use App\Http\Controllers\support\AuthenticateController as SupportAuthenticateController;
 use App\Http\Controllers\support\DashboardController as SupportDashboardController;
-
+use App\Http\Controllers\support\CustomerController as SupportCustomerController;
 
 //Frotend Controller//
 use App\Http\Controllers\HomeController;
@@ -36,7 +37,20 @@ Route::prefix('support/')->group(function () {
     });
 
     Route::middleware('support.auth')->group(function () {
-      Route::get('dashboard', [SupportDashboardController::class, 'index'])->name('support.dashboard');
+     Route::get('dashboard', [SupportDashboardController::class, 'index'])->name('support.dashboard');
+     Route::get('booking', [SupportDashboardController::class, 'booking'])->name('list.booking');
+     Route::get('orders', [SupportDashboardController::class, 'orders'])->name('list.orders');
+    Route::get('pages', [SupportDashboardController::class, 'pages'])->name('list.pages');
+
+    // Customer Route //
+
+      Route::get('customer', [SupportCustomerController::class, 'index'])->name('list.customer');
+      Route::get('create-customer', [SupportCustomerController::class, 'create'])->name('create.customer');
+      Route::post('store-customer', [SupportCustomerController::class, 'store'])->name('store.customer');
+      Route::get('edit-customer/{id}', [SupportCustomerController::class, 'edit'])->name('edit.customer');
+      Route::PUT('update-customer/{id}', [SupportCustomerController::class, 'update'])->name('update.customer');
+      Route::DELETE('delete-customer/{id}', [SupportCustomerController::class, 'destroy'])->name('destroy.customer');
+
       Route::get('logout', [SupportAuthenticateController::class, 'logout'])->name('support.logout');
 
     });
@@ -160,6 +174,8 @@ Route::prefix('admin/')->group(function () {
  Route::get('/insights', [HomeController::class, 'insights'])->name('front.insights');
  Route::get('/media', [HomeController::class, 'media'])->name('front.media');
  Route::get('/contact', [HomeController::class, 'contact'])->name('front.contact');
+
+ Route::post('/store-service', [HomeController::class, 'store_service'])->name('book.service');
 
 
 
