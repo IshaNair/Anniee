@@ -32,7 +32,7 @@ body{font-family: "Sora", sans-serif; overflow-x: hidden;}
 .content-wrapper{ background-color: #151518;}
 .navbar-light .navbar-nav .nav-link{color: #fff !important;}
 .sidebar{ padding: 0; height: calc(100vh - 88px); overflow: auto;}
-.sidebar_navigation{ padding: 24px;}
+.sidebar_navigation{ padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;}
 .sidebar_navigation .nav-sidebar .nav-item{ width: 100% !important;}
 .sidebar_navigation .nav-sidebar .nav-item + .nav-item{ margin-top: 12px;}
 .sidebar_navigation .nav-sidebar .nav-item .nav-link{ width: 100% !important; border: 1px solid #222225; border-radius: 36px; padding: 16px 20px; margin: 0; color: #A0AEC0 !important; display: flex; align-items: center; gap: 8px; min-height: 58px; font-size: 16px;}
