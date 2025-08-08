@@ -29,38 +29,22 @@ class HomeController extends Controller
 
 
     public function client_success(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
       return view('front.client_success',['menus'=>$menus]);
     }
 
     public function insights(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
      return view('front.insights',['menus'=>$menus]);
     }
 
     public function media(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
      return view('front.media',['menus'=>$menus]);
     }
 
     public function contact(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
        return view('front.contact',['menus'=>$menus]);
     }
     public function about_anniiee(){
