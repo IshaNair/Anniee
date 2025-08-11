@@ -59,9 +59,26 @@ $(document).ready(function () {
         autoplay: true,
         centerMode: true,
         autoplaySpeed: 2000,
-        arrows: true,
-        dots: false,
+        arrows: false,
+        dots: true,
         infinite: true,
         variableWidth: true,
+    });
+});
+
+
+$(document).ready(function() {
+    $('.podcastVideoThumbnail').on('click', function() {
+        let container = $(this).closest('.podcastVideo'); // Get the clicked container
+        container.addClass('active');
+
+        let iframe = container.find('iframe'); // Find iframe inside this container
+        let src = iframe.attr('src');
+
+        // Check if autoplay is already added
+        if (!src.includes('autoplay=1')) {
+            let newSrc = src.includes('?') ? src + "&autoplay=1" : src + "?autoplay=1";
+            iframe.attr('src', newSrc);
+        }
     });
 });

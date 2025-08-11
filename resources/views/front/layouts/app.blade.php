@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anniiee.com</title>
+    <link rel="shortcut icon" href="{{ asset('front/images/favicon.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,29 +34,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         @foreach ($menus as $menu)
-                        <li class="nav-item">
-                            <a class="nav-link {{ (Route::currentRouteName() == $menu->page_link ) ? 'active' : '' }}" href="{{ route($menu->page_link) }}"> {{ $menu->title }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ (Route::currentRouteName() == $menu->page_link ) ? 'active' : '' }}" href="{{ route($menu->page_link) }}"> {{ $menu->title }}</a>
+                            </li>
                          @endforeach
-
-                        <!--<li class="nav-item">
-                            <a class="nav-link {{ Route::is('front.about-anniiee') ? 'active' : '' }}" href="{{ route('front.about-anniiee') }}">About Anniiee</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Route::is('front.services') ? 'active' : '' }}" href="{{ route('front.services') }}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Route::is('front.client-success') ? 'active' : '' }}" href="{{ route('front.client-success') }}">Client Success</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Route::is('front.insights') ? 'active' : '' }}" href="{{ route('front.insights') }}">Insights</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>-->
                     </ul>
                 </div>
             </div>

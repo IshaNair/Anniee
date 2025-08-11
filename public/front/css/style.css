@@ -19,6 +19,7 @@ p{ font-size: 20px; font-weight: 400; line-height: 1.4; color: var(--white);  ma
 p.f18{ font-size: 18px;}
 p.f16{ font-size: 16px;}
 p.f14{ font-size: 14px;}
+p.f12{ font-size: 12px;}
 
 /* .button{ background-color: var(--yellow); display: inline-block; padding: 15px 30px; border-radius: 100px; color: var(--black); font-size: 14px; width: fit-content; margin: 0 auto; text-decoration: none; border: none; font-weight: 400; position: relative;}
 .button span{ position: absolute; aspect-ratio: 1 /1 ; height: 100%; background-color: var(--lightYellow); border-radius: 50px; right: -40px; top: 0 ; display: flex; align-items: center; justify-content: center;}
@@ -43,7 +44,7 @@ p.f14{ font-size: 14px;}
 
 .navigationSection{ padding: 24px 0; position: absolute; top: 0; width: 100%; z-index: 1;}
 .navigationContainer{ display: flex; align-items: center; justify-content: space-between; width: 100%; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.05); background-blend-mode: overlay; backdrop-filter: blur(20px); padding: 16px 24px; transition: all 0.5s linear ; }
-.navbar-brand{ font-size: 20px; font-weight: 700; color: var(--white);}
+.navbar-brand{ font-size: 20px; font-weight: 700; color: var(--white) !important;}
 .navbar-brand span{ color: var(--yellow);}
 .navbar-brand:hover{ color: var(--white);}
 .navigationContainer .navbar-nav .nav-item .nav-link{ color: var(--white); opacity: 0.5; font-size: 14px; padding: 12px; position: relative; transition: all 0.5s linear; text-align: center;}
@@ -82,7 +83,7 @@ p.f14{ font-size: 14px;}
 .featuredBlogSection .featuredBlog .featuredBlogtext{ margin-top: 30px;}
 .featuredBlogSection .featuredBlog .featuredBlogtext p{ margin-top: 24px; color: var(--darkGray);}
 .featuredBlogSection .featuredBlog a{ color: var(--white); text-decoration: none; font-size: 20px; margin-top: 42px; display: flex; align-items: center; gap: 12px;}
-.featuredBlogSection .featuredBlog .featuredBlogImg img{ border-radius:30px;}
+.featuredBlogSection .featuredBlog .featuredBlogImg img{ border-radius:30px; width: 100%; max-height: 430px; object-fit: cover;}
 .featuredBlogSection .featuredBlogRight .featuredBlog .featuredBlogImg img{ max-height: 240px; width: 100%; object-fit: cover;}
 
 .clientSucessBox{text-align: center; max-width: 330px; margin: 0 auto; padding: 0 30px;  display: flex; flex-direction: column; gap: 50px;}
@@ -234,7 +235,7 @@ p.f14{ font-size: 14px;}
 
 .success_manager{ display: flex; flex-wrap: wrap; gap: 40px;}
 .success_manager .success_manager_box{ width: calc(25% - 30px); position: relative;}
-.success_manager .success_manager_box::after{content: ''; position: absolute; top: 0; right: -20px; width: 1px; height: 100%;  background: linear-gradient(0deg, #00000000 0%, #6C6C68 50%, #00000000 100%);} 
+.success_manager .success_manager_box:not(:last-child)::after{content: ''; position: absolute; top: 0; right: -20px; width: 1px; height: 100%;  background: linear-gradient(0deg, #00000000 0%, #6C6C68 50%, #00000000 100%);} 
 .success_manager .success_manager_box .success_manager_number{  position: relative; margin-bottom: 24px;}
 .success_manager .success_manager_box .success_manager_number p{ font-size: 40px; position: absolute; inset: 0; margin: auto; width: fit-content; height: fit-content; font-weight: 600; }
 .success_manager .success_manager_box .success_manager_number img{ width: 100%;}
@@ -292,6 +293,80 @@ p.f14{ font-size: 14px;}
 .announcements_slider_content .announcements_slider_profile .announcements_Like .likeSection{ display: flex; align-items: center; gap: 14px;}
 .announcements_slider_content .announcements_slider_profile .announcements_Like .likeSection .like{ display: flex; align-items: center; gap:10px ;}
 .announcements_slider_content .announcements_slider_profile .announcements_Like p{ color: var(--darkGray);}
+.announcements_slider .slick-dots{    max-width: 90%;  margin: 0 auto; margin-top: 60px;  position: unset; padding: 0; display: flex; }
+.announcements_slider .slick-dots li, .announcements_slider .slick-dots li button { width: 100%; height: 3px; padding: 0; margin: 0;}
+.announcements_slider .slick-dots li button::before{ display: none;}
+.announcements_slider .slick-dots li button{ background-color: #25252E;}
+.announcements_slider .slick-dots li.slick-active button{ background-color: var(--yellow);}
+
+.media_section{ display: flex; flex-wrap: wrap; gap: 24px;}
+.media_section .media_box{ width: calc(33.33% - 16px); background: url(../images/mediaBG.jpg)no-repeat; background-size: cover; padding: 50px 30px; border-radius: 40px; border: 1px solid rgba(237, 163, 35, 0.40); text-align: center; display: flex; flex-direction: column; gap: 40px;} 
+.media_section .media_box img{ height: 40px; width: auto; object-fit: contain;}
+.media_section .media_box .button{ margin: 0 auto;}
+
+.faq_accordion + .faq_accordion{ margin-top: 42px;} 
+.faq_accordion{display: flex;border-bottom: 1px solid #2C2C2C;padding-bottom: 24px; }
+.faq_accordion .faq_accordion_number, .faq_accordion .accordion-item{width: 50%; }
+.faq_accordion .faq_accordion_number h5{ color: #5A5A59;}
+.faq_accordion .accordion-button{ padding: 0; background-color: transparent !important; border-radius: 0;  border: none; box-shadow: none !important; font-size: 30px; color: var(--white);}
+.faq_accordion .accordion-item{ background-color: transparent; border-radius: 0; border: none; padding: 0; margin: 0;}
+.faq_accordion .accordion-body{ padding: 0; margin-top: 24px;}
+.faq_accordion .accordion-button::after{ background: url(../images/accordionArrow.svg)no-repeat; background-size: 24px;}
+.faq_accordion .accordion-button:not(.collapsed)::after{background: url(../images/accordionArrowOpen.svg)no-repeat; background-size: contain; background-position: center; }
+.faq_accordion:has(.accordion-button:not(.collapsed)){ border-color: var(--yellow);}
+.faq_accordion:has(.accordion-button:not(.collapsed)) .faq_accordion_number h5{ color: var(--white);}
+
+.contactSection{ display: flex; align-items: center; flex-wrap: wrap; gap: 80px;}
+.contactSection .contactLeft{ width: calc(54% - 40px);}
+.contactSection .contactRight{ width: calc(46% - 40px);}
+.contactImg .contactImgText{padding: 20px; border-radius: 20px; background-color: var(--white); max-width: 220px; margin-left: 0; margin-right: 0; margin: auto; margin-bottom: -50px; position: relative; z-index: 1;}
+.contactImg .contactImgText p{ display: flex ; align-items: center; font-size: 16px; gap: 10px; color: var(--black);}
+.contactImg .contactImgText p span{     height: 50px; width: 50px; min-width: 50px; font-size: 20px; border-radius: 50px; background-color: var(--yellow); color: var(--white); display: flex ; align-items: center; justify-content: center; }
+.contactImg img{ width: 100%; border-radius: 40px;} 
+.conactForm{ display: flex; flex-wrap: wrap; gap: 42px;}
+.conactForm .inputBox{ width: calc(50% - 21px); display: flex; flex-direction: column; gap: 20px;}
+.conactForm .inputBox label{ font-size: 20px; font-weight: 400; color: var(--white);}
+.conactForm .inputBox input{ font-size: 14px; font-weight: 400; color: var(--white); padding: 0; border: none; background-color: transparent; padding-bottom: 14px; border-bottom: 2px solid #3F3F3F;}
+.conactForm .inputBox input:focus{ outline: none; border-color: var(--yellow); color: var(--yellow);}
+.conactForm .inputBox.w100{ width: 100%;}
+.conactForm .radioSection{ display: flex; flex-wrap: wrap; gap: 20px 8px;}
+.conactForm .radioSection .radioInput{ width: fit-content;}
+.conactForm .radioSection .radioInput input{ display: none;}
+.conactForm .radioSection .radioInput input + label{ padding: 15px 24px; border: 2px solid #3F3F3F; border-radius: 60px; color: #3F3F3F; font-size: 14px;}
+.conactForm .radioSection .radioInput input:checked + label{ color: var(--white); border-color: var(--yellow);}
+.conactForm .inputBox textarea{ padding: 20px; border: 1px solid #333; border-radius: 16px; color: var(--white); background-color: transparent;}
+.conactForm .inputBox textarea:focus{ outline: none; border-color: var(--yellow); color: var(--yellow);}
+.conactForm .inputBox textarea::placeholder, .conactForm .inputBox input::placeholder{ color: #3F3F3F;}
+.contactmapSection { width: 100%; max-width: 1920px; margin: 0 auto;}
+.contactmapSection img{ width: 100%; min-height: 300px; object-fit: cover;}
+.googlemap iframe{ width: 100%; height: 454px; border-radius: 42px;} 
+.googlemap{ margin-top: -230px;}
+
+.podcastSection{ display: flex; align-items: center; gap: 80px; flex-wrap: wrap; border: 1px solid #303030; border-radius: 40px; background: url(../images/podcast.jpg)no-repeat; background-size: cover; padding: 22px;}
+.podcastSection .podcastImg{ width: calc(55% - 40px);}
+.podcastSection .podcastImg img{ width: 100%;}
+.podcastSection .podcastVideo{ width: calc(45% - 40px);}
+.podcastSection .podcastVideo .podcastVideoThumbnail img{ border-radius: 40px;}
+.podcastSection .podcastVideo .podcastVideoThumbnail{ position: relative; cursor: pointer;}
+.podcastSection .podcastVideo .podcastVideoThumbnail .paybtn{ position: absolute; inset: 0; margin: auto; height: fit-content; width: fit-content; transition: all 0.5s linear;}
+.podcastSection .podcastVideo .podcastVideoThumbnail:hover .paybtn{ scale: 1.2;}
+.podcastVideo iframe{ width: 100%; aspect-ratio: 16 / 9;  border-radius: 40px; display: none;}
+.podcastVideo.active iframe{ display: block;}
+.podcastVideo.active .podcastVideoThumbnail{ display: none;}
+
+.in_the_podcast{ display: flex; flex-wrap: wrap; gap:24px;}
+.in_the_podcast_box { border-radius: 24px; border: 2px solid #282828;  width: calc(50% - 12px); overflow: hidden; background: url(../images/in_the_podcast_box.png); background-size: cover;}
+.in_the_podcast_box .podcastVideo .podcastVideoThumbnail img{ aspect-ratio: 16 / 9; object-fit: cover; }
+.in_the_podcast_box .podcastVideo .podcastVideoThumbnail{ position: relative; cursor: pointer;}
+.in_the_podcast_box .podcastVideo .podcastVideoThumbnail .paybtn{ position: absolute; inset: 0; margin: auto; height: fit-content; width: fit-content; transition: all 0.5s linear;}
+.in_the_podcast_box .podcastVideo .podcastVideoThumbnail:hover .paybtn{ scale: 1.2;}
+.in_the_podcast_box .in_the_podcast_box_text{ padding: 24px 16px; display:flex; flex-direction: column; gap: 12px;}
+.in_the_podcast_box .in_the_podcast_box_text p.f14 span{     height: 21px; width: 21px; background-color: #3A2626; border-radius: 21px; display: flex; align-items: center; justify-content: center; }
+.in_the_podcast_box .in_the_podcast_box_text p.f14 span span{     height: 10px; width: 10px; background-color: var(--white);}
+.in_the_podcast_box .in_the_podcast_box_text p{ display: flex; gap: 10px; align-items: center;}
+.in_the_podcast_box .in_the_podcast_box_text p.f12 {color: #7A7782;}
+.in_the_podcast_box .podcastVideo iframe{ border-radius: 0;}
+
 
 @media (width >= 1300.98px){
     .container{max-width: 1264px;}
@@ -304,6 +379,7 @@ p.f14{ font-size: 14px;}
     .about_anniiee_image .anniiee_journey .her_journey{ padding: 20px;}
     .about_anniiee_image .anniiee_journey .her_journey p{ font-size: 25px;}
     .stories_Section .stories_Box .stories_content{ padding: 60px;}
+    .conactForm .inputBox{ width: 100%;}
 }
 @media (width <= 991.98px){
     h1{font-size: 52px;}
@@ -344,6 +420,16 @@ p.f14{ font-size: 14px;}
     .stories_Section .stories_Box{ width: calc(50% - 12px);}
     .tab_content_text, .tab_content_img{ width: 100%;}
     .global_trends .global_trends_box{width: calc(33.33% - 23.33px);}
+    .announcements_slider_box{ max-width: 700px; border-radius: 25px;}
+    .announcements_slider_box .announcements_slider_img img{ border-radius: 20px;}
+    .media_section .media_box{ width: calc(50% - 12px);}
+
+    .faq_accordion{ gap: 10px;}
+    .faq_accordion .faq_accordion_number{ width: fit-content;}
+    .faq_accordion .accordion-item, .contactSection .contactRight, .contactSection .contactLeft{ width: 100%;}
+    .conactForm .inputBox{ width: calc(50% - 21px);}
+
+    
 } 
 
  @media (width <= 767.98px){
@@ -376,6 +462,16 @@ p.f14{ font-size: 14px;}
     .numerology_secrets, .tab_content_box{ padding: 20px; border-radius: 20px;}
     .tab_content_img img{ border-radius: 20px;}
     .global_trends .global_trends_box{width: calc(50% - 17.5px);}
+     .announcements_slider_box{ max-width: 500px;}
+     .media_section .media_box{ width: 100%; padding: 25px 15px; border-radius: 20px;}
+     .media_section .media_box img{ height: 30px;}
+     .faq_accordion .accordion-button{ font-size: 22px;}
+     .conactForm .inputBox label{ font-size: 18px;}
+     .in_the_podcast_box{ width: 100%;}
+     .podcastSection .podcastVideo, .podcastSection .podcastImg{ width: 100%;}
+    .podcastSection .podcastVideo .podcastVideoThumbnail img{ width: 100%;}
+    .podcastSection .podcastImg img{ max-width: 400px; margin: 0 auto;}
+    .podcastSection .podcastImg{ text-align: center;}
  }
   @media (width <= 567.98px){
     .pad80{ padding: 40px 0;}
@@ -394,6 +490,14 @@ p.f14{ font-size: 14px;}
     .client_details .line::after{ width: 100%; height: 1px;}
     .client_details{ align-items: flex-start;}
     .success_manager .success_manager_box .success_manager_number p{ font-size: 30px;}
+    .announcements_slider_box{ max-width: 300px;}
+    .announcements_slider_box .announcements_slider_img, .announcements_slider_box .announcements_slider_content{ width: 100%;}
+    .announcements_slider_box{ padding: 18px;}
+    .faq_accordion .accordion-button{ font-size: 20px;}
+    .faq_accordion .accordion-body{ margin-top: 12px;}
+    .faq_accordion + .faq_accordion{ margin-top: 24px;}
+    .conactForm .inputBox{ width: 100%;}
+    .conactForm .inputBox label{ font-size: 16px;}
   }
 
   @media (width <= 400.98px){
