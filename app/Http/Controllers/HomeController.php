@@ -31,6 +31,7 @@ class HomeController extends Controller
 
     public function client_success(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+<<<<<<< HEAD
 
         $client_success_post1 = Post::where('status','1')->where('page_type','client-success-1')->first();
         $succc_manage = Post::where('status','1')->where('page_type','success-manager')->get();
@@ -40,6 +41,9 @@ class HomeController extends Controller
         'client_success_post1'=>$client_success_post1,
         'succc_manages'=>$succc_manage
     ]);
+=======
+      return view('front.client_success',['menus'=>$menus]);
+>>>>>>> eb89324011d7eb10fd48e924aecd09e4f178fcae
     }
 
     public function insights(){
