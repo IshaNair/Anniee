@@ -6,7 +6,7 @@
         <div class="about_anniiee_row">
             <div class="about_anniiee_image">
                 <div class="anniiee_img">
-                    <img src="{{ asset('front/images/her_journey.jpg')}}" alt="her_journey">
+                    <img src="{{ asset('temp/post/'.$anniiee_post->image) }}" alt="her_journey">
                 </div>
                 <div class="anniiee_journey">
                     <div class="greenBox">
@@ -27,11 +27,11 @@
                 <div class="mainTitle">
                     <div class="titleText">
                         <p>anniiee’s journey</p>
-                        <h3>Anniiee’s Awakening A Journey of Karmic Healing</h3>
+                        <h3>{{ $anniiee_post->title}}</h3>
                     </div>
                 </div>
                 <div class="about_anniiee_content">
-                    <p class="f16">Anniiee’s inner calling sparked a global wave of karmic healing. Guided by intuition and soul purpose, her journey now inspires others to find clarity, alignment, and inner healing.</p>
+                    <p class="f16">{{ $anniiee_post->content }}</p>
                     <a href="#" class="button"><span>Learn More</span></a>
                 </div>
             </div>
@@ -108,22 +108,16 @@
                 <div class="mainTitle">
                     <div class="titleText">
                         <p>Unique Approach</p>
-                        <h3>Guiding Souls Globally with the Power of Numerology</h3>
+                        <h3>{{ $anniiee_post2->title}}</h3>
                     </div>
                 </div>
                 <div class="numerology_Content">
-                    <p class="f16">Journey began with a quiet calling—one that led her to explore the deeper meanings behind numbers, energy, and soul alignment. What started as self-discovery soon evolved into a powerful method of intuitive healing and cosmic insight.</p>
-                    <ul>
-                        <li>Combines ancient numerology with deep intuition</li>
-                        <li>Focuses on karmic healing & soul purpose decoding</li>
-                        <li>Personalized SoulPrint sessions — not one-size-fits-all</li>
-                        <li>Designed to guide, realign, and awaken your true path</li>
-                    </ul>
+                   {!! $anniiee_post2->content !!}
                     <a href="#" class="button"><span>View All</span></a>
                 </div>
             </div>
             <div class="meetAnnieeImg">
-                <img src="{{ asset('front/images/power_of_numerology.png')}}" alt="power_of_numerology">
+                <img src="{{ asset('temp/post/'.$anniiee_post2->image) }}" alt="power_of_numerology">
             </div>
         </div>
     </div>

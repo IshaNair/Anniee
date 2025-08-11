@@ -8,6 +8,7 @@ use  App\Models\Post;
 use  App\Models\Customer;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,7 @@ class HomeController extends Controller
 
        $righttposts = Post::where('status','1')->orderBy('id','ASC')
        ->skip(3)
-        ->take(4)
+        ->take(3)
         ->get();
 
       return view('front.index',['menus'=>$menus,'leftposts'=>$leftposts,'righttposts'=>$righttposts]);
@@ -29,47 +30,44 @@ class HomeController extends Controller
 
 
     public function client_success(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
-      return view('front.client_success',['menus'=>$menus]);
+
+        $client_success_post1 = Post::where('status','1')->where('page_type','client-success-1')->first();
+        $succc_manage = Post::where('status','1')->where('page_type','success-manager')->get();
+
+      return view('front.client_success',[
+        'menus'=>$menus,
+        'client_success_post1'=>$client_success_post1,
+        'succc_manages'=>$succc_manage
+    ]);
     }
 
     public function insights(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
      return view('front.insights',['menus'=>$menus]);
     }
 
     public function media(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
      return view('front.media',['menus'=>$menus]);
     }
 
     public function contact(){
-<<<<<<< HEAD
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-=======
-      $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
->>>>>>> 45cec3d829e902a48615beb1b4d2fdd7350875ea
        return view('front.contact',['menus'=>$menus]);
     }
     public function about_anniiee(){
+        $anniiee_post = Post::where('status','1')->where('page_type','anniiee_1')->first();
+        $anniiee_post2 = Post::where('status','1')->where('page_type','about-anniiee-2')->first();
+
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-      return view('front.about_anniiee',['menus'=>$menus]);
+      return view('front.about_anniiee',['menus'=>$menus,'anniiee_post'=>$anniiee_post,'anniiee_post2'=>$anniiee_post2,]);
     }
     public function services(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-        return view('front.service',['menus'=>$menus]);
+         $service_post1 = Post::where('status','1')->where('page_type','service-1')->first();
+
+        return view('front.service',['menus'=>$menus,'service_post1'=>$service_post1]);
     }
 
 
@@ -80,7 +78,7 @@ class HomeController extends Controller
         'email' => 'required|email|confirmed',
         'phone' => 'required|digits:10',
         'session_date'=>'required',
-        'session_time'=>'required|date_format:h:i A',
+        'session_time'=>'required',
        ]);
 
 
@@ -92,11 +90,7 @@ class HomeController extends Controller
           else{
                $policy = 'no';
           }
-          $formatted = \Carbon\Carbon::createFromFormat('g:i A', $request->session_time)->format('g:i A');
 
-          $time =  \Carbon\Carbon::createFromFormat('H:i', trim($request->session_time));
-
-          dd($formatted);
 
            $custome = Customer::create([
                 'name' => $request->name,
@@ -108,7 +102,7 @@ class HomeController extends Controller
 
            ]);
 
-           return redirect()->route('front.services')->with('success','Sercice book successfully.');
+           return redirect()->route('front.thanks')->with('success','Thanks, Your Session booking successfully.');
        }
 
       else{
@@ -117,5 +111,39 @@ class HomeController extends Controller
 
     }
 
+    public function booking_thanks(){
+        $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+         return view('front.booking_thanks',['menus'=>$menus]);
+    }
+
+    public function customer_login(){
+
+       $validator = Validator::make($request->all(),[
+        'email'=>'required',
+        'password'=>'required',
+      ]);
+
+      if($validator->passes()){
+
+        if(!Auth::guard('admin')->attempt($request->only('email','password'))){
+           return redirect()->route('admin.login')
+                     ->with('error','Invalid password of email');
+        }
+           $admin = Auth::guard('admin')->user();
+
+          if($admin->role !='admin' ){
+            Auth::guard('admin')->logout();
+             return redirect()->route('admin.login')
+                   ->with('message','You are not authorise to access this page!');
+          }
+
+          return redirect()->route('admin.dashboard');
+
+      }
+      else{
+          return redirect()->route('admin.login')->withInput()->withErrors($validator);
+      }
+
+    }
 
 }

@@ -49,6 +49,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="inputBox" id="product-gallery">
+
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="email">Post No</label>
+                            <input type="text" name="page_type" id="page_type" class="" value="{{ old('page_type')}}" placeholder="Post No">
+                            @error('page_type')
+                                <p class="invalid-feedback">{{ $message }}</p>
+                            @enderror
+                        </div>
 						<div class="fromBtnSection">
 							<button class="button">Create</button>
 							<a href="{{ route('post.list') }}" class="button outline">Cancel</a>

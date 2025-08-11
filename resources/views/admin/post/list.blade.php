@@ -29,6 +29,7 @@
 										<th>Slug</th>
 										<th>Content</th>
 										<th>Image</th>
+                                        <th>Page Name</th>
 										<th width="100">Status</th>
 										<th width="100">Action</th>
 									</tr>
@@ -41,6 +42,7 @@
 										<td>{{ $post->slug }}</td>
 										<td>{{ Str::limit($post->content,20) }}</td>
 										<td><img src="{{ asset('temp/post/'.$post->image) }}" width="50" height="50"></td>
+                                        <td>{{ $post->page_type }}</td>
 										<td>
 											@if ($post->status ==1)
 											<svg class="text-success-500 h-6 w-6 text-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
