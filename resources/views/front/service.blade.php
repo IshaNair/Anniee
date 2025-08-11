@@ -8,24 +8,17 @@
                     <div class="session_intro">
                         <p><span>22</span> Session Intro</p>
                     </div>
-                    <img src="{{asset('front/images/exclusive_session.jpg')}}" alt="exclusive_session">
+                    <img src="{{ asset('temp/post/'.$service_post1->image) }}" alt="exclusive_session">
                 </div>
                 <div class="exclusive_session_content">
                     <div class="mainTitle">
                         <div class="titleText">
                             <p>Session</p>
-                            <h3>Exclusive Session</h3>
+                            <h3>{{ $service_post1->title }}</h3>
                         </div>
                     </div>
                     <div class="exclusive_session_text">
-                        <p class="f16">Step into a private energetic space where Anniiee brings her full intuitive focus to your unique SoulPrint. This one-on-one session is designed for deep transformation—blending numerology, karmic insights, and intuitive downloads tailored just for you.</p>
-                        <ul>
-                            <li>Full SoulPrint decoding</li>
-                            <li>Karmic block analysis</li>
-                            <li>Personal year & life path clarity</li>
-                            <li>Live Q&A (optional)</li>
-                            <li>Limited monthly availability</li>
-                        </ul>
+                        {!! $service_post1->content !!}
                     </div>
                 </div>
             </div>
@@ -186,7 +179,7 @@
                 </div>
                 <div class="inputbox w50">
                     <label for="sessionTime">Preferred session time</label>
-                    <input type="text" id="sessionTime" name="session_time" value="{{ old('session_time')}}" class="@error('session_time') is-invalid @enderror" placeholder="h:mm AM/PM">
+                    <input type="time" id="sessionTime" name="session_time" value="{{ old('session_time')}}" class="@error('session_time') is-invalid @enderror" placeholder="h:mm AM/PM">
                      @error('session_time')
                         <p class="invalid-feedback">{{ $message }}</p>
                     @enderror

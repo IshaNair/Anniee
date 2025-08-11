@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AuthenticateController;
+use  App\Models\Menu;
 
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CategoryController;
@@ -28,6 +29,12 @@ use App\Http\Controllers\HomeController;
 
 
 //Support Route//
+
+
+Route::fallback(function () {
+   $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+    return view('front.404',['menus'=>$menus]);
+});
 
 
 Route::prefix('support/')->group(function () {
@@ -168,14 +175,17 @@ Route::prefix('admin/')->group(function () {
 //Front Route//
 
  Route::get('/', [HomeController::class, 'index'])->name('front.home');
- Route::get('/about/anniiee', [HomeController::class, 'about_anniiee'])->name('front.about-anniiee');
+ Route::get('/about-anniiee', [HomeController::class, 'about_anniiee'])->name('front.about-anniiee');
  Route::get('/services', [HomeController::class, 'services'])->name('front.services');
- Route::get('/client/success', [HomeController::class, 'client_success'])->name('front.client-success');
+ Route::get('/client-success', [HomeController::class, 'client_success'])->name('front.client-success');
  Route::get('/insights', [HomeController::class, 'insights'])->name('front.insights');
  Route::get('/media', [HomeController::class, 'media'])->name('front.media');
  Route::get('/contact', [HomeController::class, 'contact'])->name('front.contact');
 
+  Route::get('/thanks', [HomeController::class, 'booking_thanks'])->name('front.thanks');
+
  Route::post('/store-service', [HomeController::class, 'store_service'])->name('book.service');
+ Route::post('/customer-login', [HomeController::class, 'customer_login'])->name('front.login');
 
 
 

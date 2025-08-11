@@ -6,7 +6,7 @@
             <div class="exclusive_session">
                 <div class="exclusive_session_img client_success">
                     <div class="client_success_img">
-                        <img src="{{asset('front/images/client_success.png')}}" alt="client_success">
+                        <img src="{{ asset('temp/post/'.$client_success_post1->image) }}" alt="client_success">
                     </div>
                     <div class="client_success_Box">
                         <h2>4.8</h2>
@@ -18,11 +18,11 @@
                     <div class="mainTitle">
                         <div class="titleText">
                             <p>Valuable ‍🧑🏼🤝🧑 Feedback</p>
-                            <h3>Exceeded my expectations and Celebrity & CEO Testimonials</h3>
+                            <h3>{{ $client_success_post1->title }}</h3>
                         </div>
                     </div>
                     <div class="exclusive_session_text">
-                        <p class="f16">We strive to develop real-world web solutions that are ideal for  small to large projects with bespoke project requirements. We create compelling web designs, which are the right-fit for your target. We strive to develop real-world web solutions that are ideal for  small to large projects with bespoke project requirements. </p>
+                        <p class="f16">{{ $client_success_post1->content }} </p>
                         <div class="client_details">
                             <div class="logo">
                                 <p class="navbar-brand" href="index.html">Anniiee<span>.</span>com</p>
@@ -50,17 +50,21 @@
                 </div>
             </div>
             <div class="success_manager">
+              @foreach ($succc_manages as $succc_manage)
+
+
                 <div class="success_manager_box">
                     <div class="success_manager_number">
-                        <img src="{{asset('front/images/success_manager_bg.png')}}" alt="">
-                        <p>1</p>
+                        <img src="{{ asset('temp/'.$succc_manage->image) }}" alt="">
+                        <p>{{ $loop->iteration }}</p>
                     </div>
                     <div class="success_manager_Text">
-                        <h5>Session Guidance</h5>
-                        <p class="f16">Help clients choose the right path</p>
+                        <h5>{{ $succc_manage->title }}</h5>
+                        <p class="f16">{{ $succc_manage->content }}</p>
                     </div>
                 </div>
-                <div class="success_manager_box">
+              @endforeach
+                <!--<div class="success_manager_box">
                     <div class="success_manager_number">
                         <img src="{{asset('front/images/success_manager_bg.png')}}" alt="">
                         <p>2</p>
@@ -89,7 +93,8 @@
                         <h5>Aftercare Support</h5>
                         <p class="f16">Follow-ups, reports & next steps</p>
                     </div>
-                </div>
+                </div>-->
+
             </div>
         </div>
     </div>
@@ -105,6 +110,8 @@
                 </div>
             </div>
             <div class="stories_Section">
+
+
                 <div class="stories_Box">
                     <div class="stories_background_img">
                         <img src="{{asset('front/images/storybg.png')}}" alt="storybg">

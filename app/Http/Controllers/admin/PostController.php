@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Post;
+use App\Models\Menu;
 
 class PostController extends Controller
 {
@@ -19,7 +20,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('admin.post.create');
+        $menus = Menu::orderBy('id','DESC')->get();
+        return view('admin.post.create',['menus'=>$menus]);
     }
 
     public function store(Request $request)
@@ -27,6 +29,7 @@ class PostController extends Controller
           $validator = Validator::make($request->all(),[
             'title'=>'required|unique:posts,title,except,id',
              'content'=>'required',
+              'page_type'=>'required',
           ]);
 
           if($validator->passes()){
@@ -36,6 +39,7 @@ class PostController extends Controller
                 'content'=>$request->content,
                 'image'=>$request->post_image,
                 'status'=>$request->status,
+                'page_type'=>$request->page_type,
             ]);
 
               return redirect()->route('post.list')->with('success','Post Create successfully.');
@@ -78,6 +82,7 @@ class PostController extends Controller
              $post->content = $request->content;
              $post->image =  $image;
              $post->status = $request->status;
+             $post->page_type = $request->page_type;
              $post->update();
              return redirect()->route('post.list')->with('success','Post Updatge Successfully.');
           }
