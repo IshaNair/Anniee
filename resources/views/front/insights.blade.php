@@ -238,7 +238,7 @@
                     <div class="announcements_slider_content">
                         <div class="announcements_slider_text">
                             <div class="tab_content_number">
-                                <p>01</p>
+                                <p>02</p>
                             </div>
                             <h4>The design and influence of motion with the best</h4>
                         </div>
@@ -279,7 +279,7 @@
                     <div class="announcements_slider_content">
                         <div class="announcements_slider_text">
                             <div class="tab_content_number">
-                                <p>01</p>
+                                <p>03</p>
                             </div>
                             <h4>The design and influence of motion with the best</h4>
                         </div>
