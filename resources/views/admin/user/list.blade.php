@@ -9,11 +9,12 @@
 					<div class="containerBg">
 						<div class="card-header">
 							<div class="searchInput">
-								<input type="text" name="table_search" placeholder="Search">
-								<button type="submit" class="searchbtn">
+								<input type="text" name="table_search" id="user_key" placeholder="Search">
+								<button type="submit" class="searchbtn" onclick="user_search();">
 									<img src="{{asset('admin/img/search.svg')}}" alt="search">
 								</button>
 							</div>
+
 							<div class="card-btn">
 								<a href="{{ route('create.user') }}" class="button"> <img src="{{asset('admin/img/create.svg')}}" alt=""> Create User</a>
 								<a href="#" class="filterBtn"><img src="{{asset('admin/img/filter.svg')}}" alt="filter"></a>
@@ -35,7 +36,6 @@
 								</thead>
 								<tbody>
 								@forelse ($users as $user)
-
 									<tr>
 										<td>{{ $loop->iteration }}</td>
 										<td>{{ $user->name }}</td>
@@ -76,3 +76,26 @@
 					</div>
 				</section>
 		@endsection
+
+        @section('customeJS')
+        <script>
+
+       function user_search()
+       {
+           let user_key = $('#user_key').val();
+           if(user_key !=''){
+             $.ajax({
+                   url: "{{ route('user.list')}}",
+                   method:'GET',
+                   data:{user_key:user_key},
+                   success:function(data){
+                    console.log(data);
+                   },
+                   error: function(err) {
+                     console.error('Error fetching user list:', err);
+                    }
+                 });
+               }
+            }
+        </script>
+        @endsection

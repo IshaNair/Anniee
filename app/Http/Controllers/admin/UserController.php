@@ -13,9 +13,15 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::orderBy('id','DESC')->get();
+        $users = User::orderBy('id','DESC');
+        if(!empty($request->user_key)){
+          $users = $users->where('name','like',$request->user_key)
+                  ->OrWhere('email','like',$request->user_key);
+          }
+
+       $users = $users->get();
 
         return view('admin.user.list',['users'=>$users]);
     }
