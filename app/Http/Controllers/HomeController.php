@@ -31,12 +31,26 @@ class HomeController extends Controller
 
     public function client_success(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
+<<<<<<< HEAD
+
+        $client_success_post1 = Post::where('status','1')->where('page_type','client-success-1')->first();
+        $succc_manage = Post::where('status','1')->where('page_type','success-manager')->get();
+
+      return view('front.client_success',[
+        'menus'=>$menus,
+        'client_success_post1'=>$client_success_post1,
+        'succc_manages'=>$succc_manage
+    ]);
+=======
       return view('front.client_success',['menus'=>$menus]);
+>>>>>>> 04791a58204f2b332d9885e7d33041bbdae2b584
     }
 
     public function insights(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-     return view('front.insights',['menus'=>$menus]);
+        $vedic_forecast = Post::where('status','1')->where('page_type','vedic-forecast')->first();
+
+       return view('front.insights',['menus'=>$menus, 'vedic_forecast'=>$vedic_forecast]);
     }
 
     public function media(){

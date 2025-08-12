@@ -5,17 +5,17 @@
         <div class="container">
             <div class="exclusive_session">
                 <div class="exclusive_session_img client_success">
-                    <img src="{{asset('front/images/insights.png')}}" alt="insights">
+                    <img src="{{asset('temp/'.$vedic_forecast->image)}}" alt="insights">
                 </div>
                 <div class="exclusive_session_content">
                     <div class="mainTitle">
                         <div class="titleText">
                             <p>VEDIC FORECASTS</p>
-                            <h3>VEDIC FORECASTS</h3>
+                            <h3>{{ $vedic_forecast->title }}</h3>
                         </div>
                     </div>
                     <div class="exclusive_session_text insights_text">
-                        <p class="f16">Unveil the planetary alignments shaping love, emotions, and intuition each week. Stay aligned with the cosmos. Every Monday, Anniiee shares simplified Vedic astrological insights—how Mars may intensify desire, or how a Venus transit could soften heart space. These micro-forecasts guide your romantic timing and emotional decisions with planetary precision.</p>
+                        <p class="f16">{{ $vedic_forecast->content }}</p>
                         <a href="#" class="button"><span>Learn More</span></a>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="bigTitle">
                     <h2>success</h2>
                 </div>
-            </div>  
+            </div>
             <div class="numerology_secrets">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
     <div class="consultationsSection pad80">
@@ -131,7 +131,7 @@
                 <div class="bigTitle">
                     <h2>Trends</h2>
                 </div>
-            </div> 
+            </div>
             <div class="global_trends">
                 <div class="global_trends_box">
                     <div class="global_trends_img">
@@ -186,7 +186,7 @@
                 <div class="bigTitle">
                     <h2>News</h2>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="announcements_slider">
             <div>
