@@ -1,5 +1,7 @@
 @extends('front.layouts.app')
-
+@push('css')
+    <link rel="stylesheet" href="{{ asset('front/css/slider3d.css') }}">
+@endpush
 @section('content')
 <div class="consultationsSection about_anniiee_Section pad80">
     <div class="container">
@@ -158,7 +160,7 @@
         </div>
     </div>
 </div>
-<div class="consultationsSection pad80">
+<div class="consultationsSection gallarySection pad80">
     <div class="container">
         <div class="mainTitle">
             <div class="titleText">
@@ -169,6 +171,44 @@
                 <h2>Gallery</h2>
             </div>
         </div>
+         <div class="gallarySlider">
+            <div class="slider-container">
+                <div class="slider-content" id='slider-content'>
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="{{asset('front/images/gallery-1.jpg')}}" alt="gallery">
+                        </div>
+                    </div>
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="{{asset('front/images/gallery-2.jpg')}}" alt="gallery">
+                        </div>
+                    </div>
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="{{asset('front/images/gallery-3.jpg')}}" alt="gallery">
+                        </div>
+                    </div>
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="{{asset('front/images/gallery-4.jpg')}}" alt="gallery">
+                        </div>
+                    </div>
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="{{asset('front/images/gallery-5.jpg')}}" alt="gallery">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sliderArrow">
+                <div class="left-arrow arrow"><img src="{{asset('front/images/arrowBtn.svg')}}" alt=""></div>
+                <div class="right-arrow arrow"><img src="{{asset('front/images/arrowBtn.svg')}}" alt=""></div>
+            </div>
+        </div>
     </div>
 </div>
+@push('js')
+        <script src="{{asset('front/js/slider3d.js')}}"></script>
+@endpush
 @endsection

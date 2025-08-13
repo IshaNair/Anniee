@@ -375,6 +375,10 @@ p.f12{ font-size: 12px;}
 .elite_Consultations .elite_Consultations_content .elite_Consultations_date{ display: flex; gap: 10px; }
 .elite_Consultations .elite_Consultations_content .elite_Consultations_box{ padding: 16px 24px; border-radius: 60px;  border: 1px solid #43434B; background: #18181C; display: flex; align-items: center; gap: 15px;}
 
+.gallarySection{ position: relative;}
+.gallarySection::after{ content: ''; position: absolute; inset: 0; margin: auto; height: 100%; width: 100%; background: url(../images/galleryRound.png)no-repeat; background-size: contain; background-position: center;  z-index: 1;}
+.gallarySlider{ position: relative; z-index: 2;}
+
 @media (width >= 1300.98px){
     .container{max-width: 1264px;}
 }

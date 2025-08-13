@@ -1,0 +1,183 @@
+
+
+
+
+.slider-container {
+  height: 37rem;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  position: relative;
+}
+
+.slider-title{
+  position: absolute;
+  top: 0;
+  font-family: 'Papyrus', Fantasy;
+  font-size: 20px;
+}
+
+
+.slider-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  perspective: 100px;
+}
+.slider-content-background {
+  height: 100%;
+  width: 102%;
+  position: absolute;
+  top: 0;
+  left: -1%;
+  background: linear-gradient(
+    to left,
+    #f1f1f1,
+    transparent,
+    transparent,
+    transparent,
+    #f1f1f1
+  );
+  z-index: 3;
+}
+.slider-content .slide {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  max-width: 424px;
+  max-height: 586px;
+  border-radius: 25px;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, 0) rotateY(0deg) scale(1,1);
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, left 0.5s ease-in-out,
+    z-index 0s 0.25s ease-in-out, box-shadow 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.slide.position-1 {
+  left: 20% !important;
+  z-index: 1 !important;
+  transform: translate(-50%, 0) rotateY(0deg) scale(0.8, 0.8) !important;
+  opacity: 1 !important;
+  
+}
+.slide.position-2 {
+  left: 35% !important;
+  z-index: 2 !important;
+  transform: translate(-50%, 0) rotateY(0deg) scale(0.9, 0.9) !important;
+  opacity: 1 !important;
+  
+  
+}
+.slide.position-3 {
+  left: 50% !important;
+  z-index: 4 !important;
+  transform: translate(-50%, 0) rotateY(0deg) scale(1, 1) !important;
+  opacity: 1 !important;
+}
+.slide.position-3:hover .media img{
+  transform:  scale(1.05, 1.05) !important;
+}
+.slide.position-4 {
+  left: 65% !important;
+  z-index: 2 !important;
+  transform: translate(-50%, 0) rotateY(0deg) scale(0.9, 0.9) !important;
+  opacity: 1 !important;
+  
+/*   animation: center-animation 1s 1s linear 1 forwards; */
+}
+.slide.position-5 {
+  left: 80% !important;
+  z-index: 1 !important;
+  transform: translate(-50%, 0) rotateY(0deg) scale(0.8, 0.8) !important;
+  opacity: 1 !important;  
+}
+
+.slide.position-none{
+   left: 50%;
+  z-index: 0;
+  transform: translate(-50%, 0) rotateY(0deg) scale(0.7, 0.7);
+  opacity: 1;
+  box-shadow: 0px 0.4rem 1.6rem rgba(0, 0, 0, 0);
+}
+
+.slider-container i{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.slider-container .left-arrow:hover i, .slider-container .right-arrow:hover i{
+  background: rgba(22,22,220,0.1);
+  color: #fff;
+}
+
+
+.slider-content .slide .card-sections .upper-section, .slider-content .slide .card-button{
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slider-content .slide.position-3 .card-sections .upper-section, .slider-content .slide.position-3 .card-button{
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.media, .card-sections{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s linear;
+  object-fit: cover;
+}
+
+.sliderArrow{ display: flex; align-items: center; justify-content: center; margin-top: 80px; gap: 18px;}
+
+.sliderArrow .arrow{ height: 50px; width: 50px; background: #353535; border-radius: 50px; display: flex; align-items: center; justify-content: center;  transition: all 0.2s linear; }
+.sliderArrow .arrow img{ filter: invert(1); transition: all 0.2s linear; }
+.sliderArrow .arrow:hover{ background-color: #FFE78B;}
+.sliderArrow .arrow:hover img{ filter: invert(0);}
+.sliderArrow .left-arrow.arrow img{ transform: rotate(180deg);}
+
+@media(width <= 991.98px){
+    .slider-content .slide{ max-width: 340px; max-height: 500px;}
+    .slider-container{ height: 31rem;}
+}
+@media(width <= 767.98px){
+    .slider-content .slide{ max-width: 260px; max-height: 400px;}
+    .slider-container{ height: 25rem;}
+    .sliderArrow{ margin-top: 40px;}
+}
+
+

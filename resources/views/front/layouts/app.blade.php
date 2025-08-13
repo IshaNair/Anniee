@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- Slick CSS -->
+    @stack('css')
     <link rel="stylesheet" href="{{ asset('front/fonts/clash-display/css/clash-display.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 </head>
@@ -103,6 +104,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('front/js/custom.js')}}"></script>
+    @stack('js')
     @yield('customJS')
 </body>
 
