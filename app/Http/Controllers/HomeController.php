@@ -31,9 +31,8 @@ class HomeController extends Controller
 
     public function client_success(){
         $menus = Menu::where('status','1')->orderBy('id','ASC')->get();
-<<<<<<< HEAD
 
-        $client_success_post1 = Post::where('status','1')->where('page_type','client-success-1')->first();
+       $client_success_post1 = Post::where('status','1')->where('page_type','client-success-1')->first();
         $succc_manage = Post::where('status','1')->where('page_type','success-manager')->get();
 
       return view('front.client_success',[
@@ -41,9 +40,6 @@ class HomeController extends Controller
         'client_success_post1'=>$client_success_post1,
         'succc_manages'=>$succc_manage
     ]);
-=======
-      return view('front.client_success',['menus'=>$menus]);
->>>>>>> b26ddda452aa78634525bee4d15a323149210f1a
     }
 
     public function insights(){
@@ -76,8 +72,6 @@ class HomeController extends Controller
         return view('front.service',['menus'=>$menus,'service_post1'=>$service_post1]);
     }
 
-
-
     public function store_service(Request $request){
        $validator = Validator::make($request->all(),[
         'name' =>'required',
@@ -98,15 +92,15 @@ class HomeController extends Controller
           }
 
 
-           $custome = Customer::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'session_date'=> $request->session_date,
-                'session_time'=> $request->session_time,
-                'privacy_policy' => $policy,
+        $custome = Customer::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'session_date'=> $request->session_date,
+            'session_time'=> $request->session_time,
+            'privacy_policy' => $policy,
 
-           ]);
+        ]);
 
            return redirect()->route('front.thanks')->with('success','Thanks, Your Session booking successfully.');
        }
