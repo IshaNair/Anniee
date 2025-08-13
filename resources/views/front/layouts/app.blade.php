@@ -22,7 +22,7 @@
         <div class="container">
             <div class="navigationContainer">
                 <div class="mobileToggle">
-                    <a class="navbar-brand" href="index.html">Anniiee<span>.</span>com</a>
+                    <a class="navbar-brand" href="{{route('front.home')}}">Anniiee<span>.</span>com</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

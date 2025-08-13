@@ -16,9 +16,9 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="mouseClick"><img src="{{ asset('front/images/mouse.svg') }}" alt="mouse"></a>
+        <a href="#meetAnniee" class="mouseClick"><img src="{{ asset('front/images/mouse.svg') }}" alt="mouse"></a>
     </div>
-    <div class="meetAnnieeSection pad80">
+    <div class="meetAnnieeSection pad80" id="meetAnniee">
         <div class="container">
             <div class="meetAnnieeRow">
                 <div class="meetAnnieeText">
@@ -70,6 +70,28 @@
                             <p class="f18">We strive to develop real-world web solutions that are ideal for small to
                                 large projects with bespoke project requirements. web solutions that are ideal for small
                                 to large.</p>
+                        </div>
+                    </div>
+                    <div class="elite_Consultations">
+                        <div class="elite_Consultations_img">
+                            <img src="{{asset('front/images/elite_Consultations.jpg')}}" alt="elite_Consultations">
+                        </div>
+                        <div class="elite_Consultations_content">
+                            <div class="elite_Consultations_date">
+                                <div class="elite_Consultations_box">
+                                    <p class="f14">April 09, 2024</p>
+                                </div>
+                                <div class="elite_Consultations_box">
+                                    <p class="f14">21 min read</p>
+                                </div>
+                            </div>
+                            <div class="elite_Consultations_box profile">
+                                <img src="{{asset('front/images/annieeProfile.png')}}" alt="annieeProfile">
+                                <div class="elite_Consultations_text">
+                                    <p>Anniee</p>
+                                    <p class="f16">Numerologist</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
