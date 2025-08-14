@@ -89,6 +89,16 @@ body{font-family: "Sora", sans-serif; overflow-x: hidden;}
 .pagination .page-item .page-link{background-color: transparent; border-radius: 36px;  border: 1px solid transparent;  background: transparent; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff;}
 .pagination .page-item.active .page-link {background: #1C1C1F; border-color: #363E4F;}
 
+.login-page .loginTitle{ margin-bottom: 64px; text-align: center;}
+.login-page { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; justify-content: center; overflow: auto;}
+.book_sessions_form .inputbox label{ font-weight: 400; margin: 0;}
+.book_sessions_form .inputbox .invalid-feedback{ font-weight: 400; margin: 0;}
+.book_sessions_form .inputbox input{ padding: 20px 24px;}
+.book_sessions_form{ max-width: 700px; padding: 32px; background: url(../../front/images/mediaBG.jpg)no-repeat; background-size: cover; background-position: center;}
+.book_sessions_form .button { padding: 6px 10px; border: none; display: flex; width: 100%; text-decoration: none; color: var(--black); font-size: 14px; border-radius: 94.917px; background: linear-gradient(90deg, #FF8100 0%, #FFB931 50%, #FF7900 100%); box-shadow: 0 4px 0 0 #FF6102; transition: all 0.5s linear; overflow: hidden; position: relative; }
+.book_sessions_form .button span{ width: 100%;}
+.book_sessions_form .button:hover{ color: var(--black); background: linear-gradient(180deg, #FF8100 0%, #FFB931 50%, #FF7900 100%); box-shadow: 0 10px 0 0 #FF6102;}
+
 @media (min-width: 992px) {
     .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
         margin-left: 115px !important;
